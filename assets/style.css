@@ -1,0 +1,56 @@
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@font-face {
+  font-family: ocr-a-ext;
+  src: url("OCRAEXT.TTF");
+}
+a {
+  all: unset;
+}
+.main-card p,
+a {
+  font-size: 2rem;
+}
+.main-card h1 {
+  font-size: 4rem;
+}
+p.link,
+a.link {
+  border-top: 2px solid #000;
+  margin: 0;
+  padding: 1rem 0;
+  cursor: pointer;
+  display: block;
+  font-size: 1.4em;
+}
+* {
+  font-family: ocr-a-ext, monospace;
+  font-style: normal;
+  font-weight: 400;
+}
+p {
+  word-wrap: break-word;
+}
+.dh-logo {
+  width: 256px;
+  height: 256px;
+}
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-card {
+  border: 2px solid #000000;
+  border-radius: 16px;
+  background-color: rgba(174, 0, 0, 0.6);
+  text-align: center;
+  color: #000000;
+  width: 50rem;
+}
