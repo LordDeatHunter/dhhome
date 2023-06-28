@@ -2,48 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <script src="assets/three.min.js"></script>
-    <script src="assets/vanta.fog.min.js"></script>
-    <script type="module" src="assets/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
-    />
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="icon" type="image/x-icon" href="assets/dh.png" />
-    <title>[DH] Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" type="image/ico" href="favicon.png" />
+    <title>DH's place</title>
   </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
 
-  <body scroll="no" style="overflow: hidden">
-    <div class="main-card">
-      <div class="card-header">
-        <div class="card-title">
-          <img src="assets/dh.png" class="dh-logo" />
-          <h1>DeatHunter</h1>
-        </div>
-        <p>
-          I make games, game engines, mods, and sometimes some (not so) useful tools.
-        </p>
-        <p>You will often find me playing Survival or Factory games.</p>
-      </div>
-      <div class="card-links">
-        <a href="https://github.com/LordDeatHunter/" class="link bi bi-github">
-          GitHub
-        </a>
-        <a
-          href="https://www.curseforge.com/members/lorddeathunter/"
-          class="link bi bi-box"
-        >
-          CurseForge
-        </a>
-        <p
-          id="discord-link"
-          class="link copyable bi bi-discord"
-          copied-text="DH#9367"
-          hovered-text=" Click to copy!"
-          default-text=" Discord"
-        ></p>
-      </div>
-    </div>
+    <script src="/src/index.tsx" type="module"></script>
   </body>
 </html>
