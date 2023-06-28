@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "author": {
-    "name": "LordDeatHunter",
+    "name": "LordDeatHunter"
   },
   "scripts": {
     "start": "vite",
