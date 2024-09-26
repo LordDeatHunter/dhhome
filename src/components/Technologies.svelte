@@ -4,7 +4,7 @@
 
   export let technologies: Technologies[];
 
-  let collapsed = false;
+  let collapsed = true;
 </script>
 
 {#if collapsed}
