@@ -19,6 +19,12 @@
 }
 
 @layer base {
+  html, body {
+    @apply overscroll-none size-fit;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+
   .pulsate-scale {
     animation: pulsateScale 1.5s ease-in-out infinite alternate;
   }
