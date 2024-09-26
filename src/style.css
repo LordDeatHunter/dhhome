@@ -1,0 +1,155 @@
+@import 'app.css';
+
+@tailwind base;
+
+@layer base {
+  #home {
+    color: var(--txt-black);
+
+    .divider-h {
+      background-image: linear-gradient(90deg, #00000000, var(--txt-black), #00000000);
+    }
+  }
+
+  .bg-home {
+    @apply pulsate-background m-0 min-h-screen p-0 antialiased;
+    background: radial-gradient(
+        circle,
+        rgba(241, 50, 67, 1) 15%,
+        rgba(225, 12, 51, 1) 40%,
+        rgba(189, 14, 51, 1) 60%,
+        rgba(151, 20, 64, 1) 80%,
+        rgba(74, 13, 55, 1) 100%
+      )
+      center;
+  }
+
+  #projects {
+    color: var(--txt-crimson);
+
+    .divider-h {
+      background-image: linear-gradient(90deg, #00000000, var(--txt-crimson), #00000000);
+    }
+
+    .divider-v {
+      background-image: linear-gradient(90deg, #00000000, var(--txt-crimson), #00000000);
+      width: 0.5rem;
+    }
+  }
+
+  .project-img-preview {
+    @apply h-auto w-full transition-all duration-300 ease-in-out;
+  }
+
+  .project-cards {
+    @apply grid grid-cols-1 gap-4 transition-all duration-300 ease-in-out md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .project-card {
+    @apply cursor-pointer transition-all duration-300 ease-in-out hover:scale-105;
+    /*outline: 4px solid var(--txt-crimson);*/
+
+    color: var(--txt-crimson-lighter);
+
+    .title {
+      @apply text-center text-lg font-bold md:text-2xl;
+    }
+
+    .summary {
+      @apply text-sm md:text-lg;
+    }
+
+    .tech-stack {
+      @apply text-xs md:text-sm;
+    }
+
+    .links {
+      @apply text-sm;
+    }
+  }
+
+  .button {
+    color: var(--txt-crimson);
+
+    @apply rounded-lg bg-[var(--txt-gray-1)] px-4 py-2 font-semibold uppercase shadow-lg transition-all duration-150 ease-in-out hover:bg-[var(--txt-crimson-faded)];
+  }
+
+  .technologies-button {
+    @apply flex flex-wrap items-center justify-center gap-2;
+    color: whitesmoke;
+  }
+
+  .project-overview {
+    @apply flex flex-col items-center justify-items-center gap-16 p-4;
+
+    color: var(--txt-crimson-lighter);
+
+    .title {
+      @apply text-lg font-bold md:text-2xl;
+    }
+
+    .summary {
+      @apply text-sm md:text-lg;
+    }
+  }
+
+  .project-container {
+    @apply flex flex-col gap-4 p-4;
+
+    > h2 {
+      @apply fade-in text-4xl font-[960];
+    }
+
+    > p {
+      @apply px-4;
+    }
+
+    > .project-cards > .project-card {
+      @apply rounded-lg p-4 shadow-lg;
+      background: #1a1a1a;
+
+      &:hover {
+        background: #212121;
+      }
+    }
+  }
+
+  .technology {
+    @apply rounded-full bg-[var(--txt-gray-1)] px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white;
+  }
+
+  .bg-projects {
+    @apply m-0 min-h-screen p-0 antialiased;
+    background: #101010;
+  }
+
+  .project-dialog {
+    @apply flex transform flex-col items-center justify-center gap-6 rounded-lg bg-black bg-opacity-75 p-6 shadow-lg;
+    border: 1px solid var(--txt-crimson);
+
+    .description {
+      @apply break-words p-4;
+    }
+
+    .close-button {
+      @apply absolute right-0 top-0 pr-4 pt-4;
+      color: var(--txt-crimson);
+    }
+
+    .project-img-preview {
+      @apply hover:scale-125;
+    }
+
+    > h2 {
+      @apply text-4xl;
+
+      color: var(--txt-crimson);
+    }
+  }
+
+  dialog {
+    background: none;
+
+    @apply m-auto h-fit w-[960px] p-0;
+  }
+}
