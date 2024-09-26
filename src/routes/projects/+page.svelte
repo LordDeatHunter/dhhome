@@ -4,7 +4,7 @@
   import ProjectModal from '../../components/ProjectModal.svelte';
   import ProjectCategory from './ProjectCategory.svelte';
 
-  export let data;
+  export let data: ProjectCategory;
 </script>
 
 <main id="projects" class="bg-projects flex flex-col items-center justify-center gap-0">
