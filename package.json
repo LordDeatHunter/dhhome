@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite dev",
     "prebuild": "node scripts/generateMarkdown.js",
-    "build": "bun prebuild && vite build",
+    "cleanup": "rimraf ./build",
+    "build": "bun cleanup && bun prebuild && vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -32,6 +33,7 @@
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.5",
+    "rimraf": "^6.0.1",
     "svelte": "^4.2.7",
     "svelte-check": "^3.6.0",
     "tailwindcss": "^3.4.9",

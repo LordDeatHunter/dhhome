@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: install ssh
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.HOST }} > ~/.ssh/known_hosts
+      - name: connect and deploy
+        run: |
+          ssh "${{ secrets.USERNAME }}@${{ secrets.HOST }}" "
+            export PATH=${{ secrets.BUN_PATH }}:\$PATH
+            echo \$PATH
+            cd ${{ secrets.SITE_PATH }} &&
+            git reset --hard &&
+            git pull &&
+            rm -rf node_modules &&
+            bun i &&
+            bun run build &&
+            pm2 restart all
+          "
+      - name: cleanup
+        run: rm -rf ~/.ssh
