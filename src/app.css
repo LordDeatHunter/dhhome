@@ -20,9 +20,7 @@
 
 @layer base {
   html, body {
-    @apply overscroll-none size-fit;
-    min-width: 100vw;
-    min-height: 100vh;
+    @apply overscroll-none;
   }
 
   .pulsate-scale {
