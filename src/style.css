@@ -27,6 +27,10 @@
   #projects {
     color: var(--txt-crimson);
 
+    p {
+      color: var(--txt-light-red);
+    }
+
     .divider-h {
       background-image: linear-gradient(90deg, #00000000, var(--txt-crimson), #00000000);
     }

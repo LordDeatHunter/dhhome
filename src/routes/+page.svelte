@@ -14,8 +14,7 @@
     <img src="dh.png" class="mb-6 mt-8 h-auto w-40" alt="DeatHunter Avatar" />
     <div class="flex flex-col items-center justify-center gap-3">
       <p class="fade-in m-0 max-w-md text-center text-xl font-normal">
-        I like learning and creating new things. I've participated in a couple of game jams, and
-        created some popular Minecraft mods.
+        Professional Full-stack Engineer, ex-competitive programmer and passionate indie Game Developer, known for making some notable Minecraft Mods.
       </p>
     </div>
     <div class="divider-h slower-fade-in" />
