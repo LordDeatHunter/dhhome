@@ -17,6 +17,9 @@
   --txt-crimson-lighter: #F13243;
   --txt-crimson-faded: #bd0e3344;
   --txt-light-red: #F15274;
+  --dark-1: #101010;
+  --dark-2: #1A1A1A;
+  --dark-3: #212121;
 }
 
 @layer base {

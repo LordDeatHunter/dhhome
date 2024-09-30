@@ -24,7 +24,7 @@
       center;
   }
 
-  #projects {
+  #projects, #contact {
     color: var(--txt-crimson);
 
     p {
@@ -35,9 +35,37 @@
       background-image: linear-gradient(90deg, #00000000, var(--txt-crimson), #00000000);
     }
 
+    .divider-h-dark {
+      @apply divider-h;
+      background-image: linear-gradient(90deg, #00000000, var(--dark-2), #00000000);
+    }
+
     .divider-v {
       background-image: linear-gradient(90deg, #00000000, var(--txt-crimson), #00000000);
       width: 0.5rem;
+    }
+  }
+
+  .contact-links {
+    @apply slower-fade-in flex max-w-[960px] flex-col gap-4 mt-24 w-full p-8 rounded-xl;
+    @apply border-4 border-[var(--dark-2)] shadow-lg;
+  }
+
+  .contact-link {
+    @apply flex flex-col gap-4;
+
+    .contact-main {
+      @apply flex items-center gap-4;
+    }
+
+    .contact-action {
+      color: var(--txt-light-red);
+      @apply cursor-pointer transition-colors duration-200 ease-in-out transform flex items-center gap-2 pl-14 w-fit;
+
+      &:hover {
+        @apply scale-110 origin-center;
+        color: var(--txt-crimson-lighter);
+      }
     }
   }
 
@@ -110,10 +138,10 @@
 
     > .project-cards > .project-card {
       @apply rounded-lg p-4 shadow-lg;
-      background: #1a1a1a;
+      background: var(--dark-2);
 
       &:hover {
-        background: #212121;
+        background: var(--dark-3);
       }
     }
   }
@@ -122,9 +150,9 @@
     @apply rounded-full bg-[var(--txt-gray-1)] px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white;
   }
 
-  .bg-projects {
+  .bg-projects, .bg-contact {
     @apply m-0 min-h-screen p-0 antialiased;
-    background: #101010;
+    background: var(--dark-1);
   }
 
   .project-dialog {
