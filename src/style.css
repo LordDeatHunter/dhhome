@@ -24,7 +24,8 @@
       center;
   }
 
-  #projects, #contact {
+  #projects,
+  #contact {
     color: var(--txt-crimson);
 
     p {
@@ -47,7 +48,7 @@
   }
 
   .contact-links {
-    @apply slower-fade-in flex max-w-[960px] flex-col gap-4 mt-24 w-full p-8 rounded-xl;
+    @apply slower-fade-in mt-24 flex w-full max-w-[960px] flex-col gap-4 rounded-xl p-8;
     @apply border-4 border-[var(--dark-2)] shadow-lg;
   }
 
@@ -60,10 +61,10 @@
 
     .contact-action {
       color: var(--txt-light-red);
-      @apply cursor-pointer transition-colors duration-200 ease-in-out transform flex items-center gap-2 pl-14 w-fit;
+      @apply flex w-fit transform cursor-pointer items-center gap-2 pl-14 transition-colors duration-200 ease-in-out;
 
       &:hover {
-        @apply scale-110 origin-center;
+        @apply origin-center scale-110;
         color: var(--txt-crimson-lighter);
       }
     }
@@ -112,15 +113,15 @@
   }
 
   .project-overview {
-    @apply flex flex-col items-center justify-items-center gap-16 p-4;
+    @apply flex flex-col items-center justify-items-center gap-3 p-4 text-center;
 
     color: var(--txt-crimson-lighter);
 
-    .title {
-      @apply text-lg font-bold md:text-2xl;
+    h2 {
+      @apply my-4 text-2xl font-bold;
     }
 
-    .summary {
+    p {
       @apply text-sm md:text-lg;
     }
   }
@@ -150,7 +151,8 @@
     @apply rounded-full bg-[var(--txt-gray-1)] px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white;
   }
 
-  .bg-projects, .bg-contact {
+  .bg-projects,
+  .bg-contact {
     @apply m-0 min-h-screen p-0 antialiased;
     background: var(--dark-1);
   }

@@ -31,15 +31,11 @@
     <h2>{$selectedProject?.title}</h2>
     <div class="divider-h" />
     <div class="project-overview">
-      <div class="flex gap-4">
-        <div class="flex flex-col justify-between text-center">
-          {@html $selectedProject?.description}
-        </div>
-      </div>
+      {@html $selectedProject?.description}
     </div>
-    <div class="divider-h" />
-    <div class="flex gap-8">
-      {#if $selectedProject?.link || $selectedProject?.source}
+    {#if $selectedProject?.link || $selectedProject?.source}
+      <div class="divider-h" />
+      <div class="flex gap-8">
         {#if $selectedProject?.link}
           <ExternalLink url={$selectedProject?.link}>View Project</ExternalLink>
         {/if}
@@ -48,8 +44,8 @@
             View Source
           </ExternalLink>
         {/if}
-      {/if}
-    </div>
+      </div>
+    {/if}
   </div>
 </dialog>
 <div
