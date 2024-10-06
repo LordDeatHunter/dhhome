@@ -124,6 +124,38 @@
     p {
       @apply text-sm md:text-lg;
     }
+
+    a {
+      @apply cursor-pointer text-sm font-semibold underline transition-colors duration-200 ease-in-out md:text-lg;
+      color: var(--txt-crimson);
+
+      &:hover {
+        color: var(--txt-crimson-lighter);
+      }
+    }
+
+    pre {
+      @apply overflow-x-auto whitespace-pre-wrap break-words rounded-lg p-4 text-left font-mono text-sm shadow-lg;
+
+      color: #cbccc6;
+      background-color: #303030;
+
+      .hljs-keyword {
+        color: #0098db;
+      }
+
+      .hljs-string {
+        color: #ff0546;
+      }
+
+      .hljs-number {
+        color: #05ff69;
+      }
+
+      .hljs-built_in {
+        color: #0ce6f2;
+      }
+    }
   }
 
   .project-container {
