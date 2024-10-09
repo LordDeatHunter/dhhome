@@ -203,7 +203,7 @@
   }
 
   .technology {
-    @apply rounded-full bg-[var(--txt-gray-1)] px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white;
+    @apply rounded-full bg-[var(--txt-gray-1)] px-2 py-1 text-xs font-semibold tracking-wide text-white;
   }
 
   .bg-projects,

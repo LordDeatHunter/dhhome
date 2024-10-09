@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Technologies } from '$lib/types';
+  import { Technologies } from '$lib/types';
   import Icon from '@iconify/svelte';
 
-  export let technologies: Technologies[];
+  export let technologies: Array<keyof typeof Technologies>;
 
   let collapsed = true;
 </script>
@@ -20,7 +20,7 @@
   <div class="flex flex-wrap gap-1">
     {#each technologies as technology}
       <span class="technology">
-        {technology}
+        {Object.keys(Technologies).includes(technology) ? Technologies[technology] : technology}
       </span>
     {/each}
   </div>

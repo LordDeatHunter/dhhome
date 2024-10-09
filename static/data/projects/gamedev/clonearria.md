@@ -2,7 +2,7 @@
 title: 'Clonarria'
 summary: 'Attempts at making a Terraria clone, in multiple frameworks.'
 img: 'assets/clonearria.png'
-technologies: [ Love2D, Lua, C#, MonoGame ]
+technologies: [ Love2D, Lua, CSharp, MonoGame ]
 ---
 
 ## Love2D (Lua)
