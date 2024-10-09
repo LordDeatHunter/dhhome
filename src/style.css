@@ -115,7 +115,7 @@
   }
 
   .project-overview {
-    @apply flex flex-col items-center justify-items-center gap-3 p-4 text-center;
+    @apply flex flex-col gap-3 p-4;
 
     color: var(--txt-crimson-lighter);
 
@@ -137,7 +137,7 @@
     }
 
     pre {
-      @apply overflow-x-auto whitespace-pre-wrap break-words rounded-lg p-4 text-left font-mono text-sm shadow-lg;
+      @apply overflow-x-auto whitespace-pre-wrap break-words rounded-lg p-4 font-mono text-sm shadow-lg;
 
       color: #cbccc6;
       background-color: #303030;
@@ -157,6 +157,27 @@
       .hljs-built_in {
         color: #0ce6f2;
       }
+    }
+
+    ul {
+      @apply list-disc;
+    }
+
+    ol {
+      @apply list-decimal;
+    }
+
+    ul,
+    ol {
+      @apply my-4 list-inside pl-4;
+    }
+
+    li {
+      @apply my-2;
+    }
+
+    img {
+      @apply my-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105;
     }
   }
 
