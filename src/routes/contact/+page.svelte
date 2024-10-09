@@ -8,7 +8,7 @@
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     copied = true;
-    setTimeout(() => copied = false, 2000);
+    setTimeout(() => (copied = false), 2000);
   };
 </script>
 
@@ -38,6 +38,14 @@
       text="CurseForge"
       mainIcon="simple-icons:curseforge"
       action={() => window.open('https://www.curseforge.com/members/lorddeathunter/projects')}
+      actionIcon="pixelarticons:external-link"
+      actionText="Open"
+    />
+    <div class="divider-h-dark" />
+    <ContactLink
+      text="Itch.io"
+      mainIcon="simple-icons:itchdotio"
+      action={() => window.open('https://lorddeathunter.itch.io/')}
       actionIcon="pixelarticons:external-link"
       actionText="Open"
     />
