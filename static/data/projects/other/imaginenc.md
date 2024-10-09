@@ -38,7 +38,7 @@ the characters, and convert them into a single number, which would then be conve
 For example, "b79oct" (98, 55, 57, 111, 99, 116) would be converted into the number 98\*256<sup>5</sup> + 55\*256<sup>4
 </sup> + 57\*256<sup>3</sup> + 111\*256<sup>2</sup> + 99\*256 + 116 = 107.989.326.324.596, or as an image:
 
-![jkl](assets/projects/imaginenc-b79oct.png)
+![b79oct](assets/projects/imaginenc-b79oct.png)
 
 Here's a 1-liner in Python for converting a string into a Base 10 number:
 
