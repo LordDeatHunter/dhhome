@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../../style.css';
+  import '$style/style.css';
   import NavBar from '$components/NavBar.svelte';
   import ContactLink from '$components/ContactLink.svelte';
 

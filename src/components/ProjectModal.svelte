@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '../style.css';
   import { selectedProject } from '$lib/stores';
   import Icon from '@iconify/svelte';
   import ExternalLink from '$components/ExternalLink.svelte';

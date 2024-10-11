@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '../style.css';
   import { selectedProject } from '$lib/stores';
   import type { Project } from '$lib/types';
   import ExternalLink from '$components/ExternalLink.svelte';

@@ -14,16 +14,17 @@
   --txt-gray-1: #333333;
   --txt-gray-2: #444444;
   --txt-crimson: #bd0e33;
-  --txt-crimson-lighter: #F13243;
+  --txt-crimson-lighter: #f13243;
   --txt-crimson-faded: #bd0e3344;
-  --txt-light-red: #F15274;
+  --txt-light-red: #f15274;
   --dark-1: #101010;
-  --dark-2: #1A1A1A;
+  --dark-2: #1a1a1a;
   --dark-3: #212121;
 }
 
 @layer base {
-  html, body {
+  html,
+  body {
     @apply overscroll-none;
   }
 

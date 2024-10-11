@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '../style.css';
+  import '$style/style.css';
   import NavBar from '$components/NavBar.svelte';
 
   export const openLink = (url: string, openInNewTab: boolean = true) => {
