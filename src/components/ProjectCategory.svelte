@@ -1,6 +1,6 @@
 <script lang="ts">
   import { blur } from 'svelte/transition';
-  import ProjectCard from './ProjectCard.svelte';
+  import ProjectCard from '$components/ProjectCard.svelte';
   import type { ProjectCategory } from '$lib/types';
   import Icon from '@iconify/svelte';
 

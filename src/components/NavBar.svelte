@@ -2,8 +2,8 @@
   import Icon from '@iconify/svelte';
 </script>
 
-<nav class="flex gap-6 mx-2 flex-wrap justify-center">
-  <a href="/" class="flex items-center gap-1">
+<nav class="mx-2 flex flex-wrap justify-center gap-6">
+  <a href="/static" class="flex items-center gap-1">
     <Icon icon="pixelarticons:home" class="h-6 w-6" />
     home
   </a>

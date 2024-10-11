@@ -1,7 +1,7 @@
 <script lang="ts">
   import '../../style.css';
-  import NavBar from '../NavBar.svelte';
-  import ContactLink from '../../components/ContactLink.svelte';
+  import NavBar from '$components/NavBar.svelte';
+  import ContactLink from '$components/ContactLink.svelte';
 
   let copied = false;
 

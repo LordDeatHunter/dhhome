@@ -2,7 +2,7 @@
   import '../style.css';
   import { selectedProject } from '$lib/stores';
   import Icon from '@iconify/svelte';
-  import ExternalLink from './ExternalLink.svelte';
+  import ExternalLink from '$components/ExternalLink.svelte';
 
   let dialog: HTMLDialogElement;
 

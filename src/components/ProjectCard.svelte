@@ -1,9 +1,9 @@
 <script lang="ts">
-  import '../../style.css';
+  import '../style.css';
   import { selectedProject } from '$lib/stores';
   import type { Project } from '$lib/types';
-  import ExternalLink from '../../components/ExternalLink.svelte';
-  import Technologies from '../../components/Technologies.svelte';
+  import ExternalLink from '$components/ExternalLink.svelte';
+  import Technologies from '$components/Technologies.svelte';
 
   export let project: Project;
 </script>

@@ -1,8 +1,8 @@
 <script lang="ts">
   import '../../style.css';
-  import NavBar from '../NavBar.svelte';
-  import ProjectModal from '../../components/ProjectModal.svelte';
-  import ProjectCategory from './ProjectCategory.svelte';
+  import NavBar from '$components/NavBar.svelte';
+  import ProjectModal from '$components/ProjectModal.svelte';
+  import ProjectCategory from '$components/ProjectCategory.svelte';
 
   export let data: ProjectCategory;
 </script>
