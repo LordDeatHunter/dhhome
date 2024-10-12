@@ -52,6 +52,7 @@ projectCategoriesFiles.forEach((file) => {
 
     const project = {
       ...data,
+      technologies: data.technologies.sort(),
       description: htmlContent
     };
 

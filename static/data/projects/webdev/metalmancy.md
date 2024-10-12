@@ -7,6 +7,7 @@ technologies:
   - TailwindCss
   - Supabase
   - TypeScript
+  - Vue
 link: 'https://metalmancy.tech/'
 ---
 
