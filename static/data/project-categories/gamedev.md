@@ -15,4 +15,5 @@ engines and frameworks, with my latest focus being on Godot.
 Most of the games I have available publicly were made during GameJams, and not much progress has been made on them since
 then.
 
-My most notable achievement as a team is the "Best Programmers" award in the 2023 Global Game Jam.
+My most notable achievement as a team is the "Best Programmers" award in my country's local hosting of 2023 Global Game
+Jam.

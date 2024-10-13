@@ -7,8 +7,14 @@ link: 'https://www.curseforge.com/minecraft/mc-mods/fabric-waystones'
 source: 'https://github.com/LordDeatHunter/FabricWaystones/'
 ---
 
-[![curseforge](https://cf.way2muchnoise.eu/410902.svg?badge_style=for_the_badge)](https://www.curseforge.com/minecraft/mc-mods/fabric-waystones)
-[![modrinth](https://img.shields.io/modrinth/dt/fwaystones?color=00AF5C&label=Modrinth&logo=modrinth&style=for-the-badge)](https://modrinth.com/mod/fwaystones)
+<div class="flex gap-2">
+  <a href="https://www.curseforge.com/minecraft/mc-mods/fabric-waystones">
+    <img alt="curseforge" src="https://cf.way2muchnoise.eu/410902.svg?badge_style=for_the_badge" />
+  </a>
+  <a href="https://modrinth.com/mod/fwaystones">
+    <img alt="modrinth" src="https://img.shields.io/modrinth/dt/fwaystones?color=00AF5C&label=Modrinth&logo=modrinth&style=for-the-badge" />
+  </a>
+</div>
 
 A Minecraft mod that adds Waystones to the game, allowing players to teleport between them once they are discovered.\
 The first version of this mod was made for Minecraft 1.16.5 using Fabric.
