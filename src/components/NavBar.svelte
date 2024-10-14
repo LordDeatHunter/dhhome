@@ -3,7 +3,7 @@
 </script>
 
 <nav class="mx-2 flex flex-wrap justify-center gap-6">
-  <a href="/static" class="flex items-center gap-1">
+  <a href="/" class="flex items-center gap-1">
     <Icon icon="pixelarticons:home" class="h-6 w-6" />
     home
   </a>
