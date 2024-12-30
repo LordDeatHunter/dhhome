@@ -30,3 +30,11 @@ export interface ProjectCategory {
   description: string;
   projects: Project[];
 }
+
+export type Bottlecaps = Record<string, Bottlecap>;
+
+export interface Bottlecap {
+  country: string;
+  id: string;
+  name: string;
+}

@@ -70,7 +70,8 @@
     }
   }
 
-  .project-img-preview {
+  .project-img-preview,
+  .bottlecap-img-preview {
     @apply full object-contain transition-all duration-300 ease-in-out;
 
     image-rendering: pixelated;
@@ -78,6 +79,24 @@
 
   .project-cards {
     @apply grid grid-cols-1 gap-4 transition-all duration-300 ease-in-out md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .bottlecaps {
+    @apply grid grid-cols-1 gap-4 transition-all duration-300 ease-in-out md:grid-cols-4 lg:grid-cols-5;
+  }
+
+  .bottlecap {
+    @apply transition-all duration-300 ease-in-out hover:scale-105;
+
+    color: var(--txt-crimson-lighter);
+
+    .title {
+      @apply text-center text-lg font-bold md:text-2xl;
+    }
+
+    .country {
+      @apply text-center;
+    }
   }
 
   .project-card {
