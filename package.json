@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite dev",
-    "prebuild": "node scripts/generateMarkdown.js",
+    "prebuild": "node scripts/generateMarkdown.js && cp static/assets/caps/caps.json src/lib",
     "cleanup": "rimraf ./build",
     "build": "bun cleanup && bun prebuild && vite build",
     "preview": "vite preview",
