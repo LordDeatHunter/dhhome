@@ -14,7 +14,7 @@
     <NavBar />
     <div class="divider-h slower-fade-in" />
     <h2 class="fade-in pb-6 text-5xl font-[960]">Beer Bottlecap Collection</h2>
-    <div class="slower-fade-in flex max-w-[1240px] flex-col gap-8">
+    <div class="slower-fade-in flex max-w-[1440px] flex-col gap-8">
       <div class="bottlecaps">
         {#each Object.values(data).sort((a, b) => a.name.localeCompare(b.name)) as bottlecap}
           <Bottlecap {bottlecap} />

@@ -1,4 +1,15 @@
 @import 'app.css';
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap');
+
+.handjet {
+  font-family: 'Handjet', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    'ELGR' 1,
+    'ELSH' 2;
+}
 
 @tailwind base;
 
@@ -86,20 +97,32 @@
   }
 
   .bottlecaps {
-    @apply grid grid-cols-1 gap-4 transition-all duration-300 ease-in-out md:grid-cols-4 lg:grid-cols-5;
+    @apply grid grid-cols-2 gap-4 transition-all duration-300 ease-in-out sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7;
   }
 
   .bottlecap {
-    @apply cursor-pointer transition-all duration-300 ease-in-out hover:scale-105;
+    @apply cursor-pointer py-4 transition-all duration-300 ease-in-out hover:scale-105;
 
     color: var(--txt-crimson-lighter);
 
     .title {
-      @apply text-center text-lg font-bold md:text-2xl;
+      @apply text-center text-3xl;
+
+      font-family: Handjet !important;
     }
 
     .country {
       @apply text-center;
+    }
+
+    img {
+      @apply transition-all duration-300 ease-in-out;
+      border: 0 solid var(--txt-crimson);
+      border-radius: 100%;
+    }
+
+    &:hover img {
+      border: 6px solid var(--txt-crimson);
     }
   }
 
@@ -272,6 +295,10 @@
   .image-dialog-content {
     @apply flex max-h-[80vh] max-w-[80vh] transform items-center justify-center rounded-lg bg-black bg-opacity-75 p-6 shadow-lg;
     border: 2px solid var(--txt-crimson);
+
+    img {
+      border-radius: 0.5rem;
+    }
   }
 
   .image-loading-box {

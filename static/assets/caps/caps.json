@@ -113,12 +113,6 @@
     "country": "Bosnia and Herzegovina",
     "name": "BJØRN"
   },
-  "281847": {
-    "id": "281847",
-    "internalId": "281847",
-    "country": "United Kingdom",
-    "name": "BL"
-  },
   "142998": {
     "id": "142998",
     "internalId": "142998",
@@ -617,6 +611,18 @@
     "country": "Germany",
     "name": "Helles"
   },
+  "281847": {
+    "id": "281847",
+    "internalId": "281847",
+    "country": "United Kingdom",
+    "name": "Hobgoblin Ruby"
+  },
+  "281849": {
+    "id": "281849",
+    "internalId": "281849",
+    "country": "United Kingdom",
+    "name": "Hobgoblin Ruby"
+  },
   "124638": {
     "id": "124638",
     "internalId": "124638",
@@ -628,12 +634,6 @@
     "internalId": "29210",
     "country": "Germany",
     "name": "Hopf Helle Weiße Hefeweißbier"
-  },
-  "281849": {
-    "id": "281849",
-    "internalId": "281849",
-    "country": "United Kingdom",
-    "name": "IN"
   },
   "110713": {
     "id": "110713",
@@ -808,12 +808,6 @@
     "internalId": "39287",
     "country": "Germany",
     "name": "Löwenbräu"
-  },
-  "179815": {
-    "id": "179815",
-    "internalId": "179815",
-    "country": "Germany",
-    "name": "MK"
   },
   "248403": {
     "id": "248403",
@@ -1001,6 +995,12 @@
     "country": "Germany",
     "name": "Paulaner Zwickl Bier"
   },
+  "166450": {
+    "id": "166450",
+    "internalId": "166450",
+    "country": "France",
+    "name": "Perlenbacher"
+  },
   "254309": {
     "id": "254309",
     "internalId": "254309",
@@ -1012,12 +1012,6 @@
     "internalId": "267400",
     "country": "Germany",
     "name": "Perlenbacher"
-  },
-  "166450": {
-    "id": "166450",
-    "internalId": "166450",
-    "country": "France",
-    "name": "Perlenbacher - Brewed by Brasserie Champigneulles SAS for Lidl Dienstleistung GmbH & Co. KG and his partners"
   },
   "105658": {
     "id": "105658",
@@ -1102,6 +1096,12 @@
     "internalId": "68478",
     "country": "Germany",
     "name": "Reutberger Kloster-Biere Anno 1677"
+  },
+  "179815": {
+    "id": "179815",
+    "internalId": "179815",
+    "country": "Germany",
+    "name": "Riedenburger"
   },
   "86885": {
     "id": "86885",
