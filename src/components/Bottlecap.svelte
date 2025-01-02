@@ -1,10 +1,15 @@
 <script lang="ts">
+  import { selectedImage } from '$lib/stores';
   import type { Bottlecap } from '$lib/types';
 
   export let bottlecap: Bottlecap;
 </script>
 
-<div class="bottlecap flex flex-col items-center justify-between gap-8">
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+<div
+  class="bottlecap flex flex-col items-center justify-between gap-8"
+  on:click={() => selectedImage.set(`assets/caps/cropped/${bottlecap.internalId}.jpg`)}
+>
   <div class="flex flex-col justify-between gap-2">
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="flex h-40 w-40 items-center justify-center">

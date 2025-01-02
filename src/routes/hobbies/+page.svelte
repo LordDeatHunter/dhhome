@@ -3,6 +3,7 @@
   import NavBar from '$components/NavBar.svelte';
   import type { Bottlecaps } from '$lib/types';
   import Bottlecap from '$components/Bottlecap.svelte';
+  import ImageModal from '$components/ImageModal.svelte';
 
   export let data: Bottlecaps;
 </script>
@@ -21,4 +22,5 @@
       </div>
     </div>
   </div>
+  <ImageModal />
 </main>

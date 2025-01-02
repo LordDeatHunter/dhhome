@@ -17,10 +17,10 @@
   bind:this={dialog}
   on:close={() => selectedProject.set(null)}
   on:click|self={() => selectedProject.set(null)}
-  class="z-2"
+  class="project-dialog"
 >
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="project-dialog" on:click|stopPropagation>
+  <div class="project-dialog-content" on:click|stopPropagation>
     <button class="close-button" on:click={() => selectedProject.set(null)}>
       <Icon icon="pixelarticons:close" class="h-8 w-8" />
     </button>

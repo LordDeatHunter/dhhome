@@ -90,7 +90,7 @@
   }
 
   .bottlecap {
-    @apply transition-all duration-300 ease-in-out hover:scale-105;
+    @apply cursor-pointer transition-all duration-300 ease-in-out hover:scale-105;
 
     color: var(--txt-crimson-lighter);
 
@@ -236,6 +236,11 @@
   }
 
   .project-dialog {
+    @apply z-[2] m-auto h-fit w-[960px] p-0 outline-none;
+    background: none;
+  }
+
+  .project-dialog-content {
     @apply flex transform flex-col items-center justify-center gap-6 rounded-lg bg-black bg-opacity-75 p-6 shadow-lg;
     border: 1px solid var(--txt-crimson);
 
@@ -259,9 +264,18 @@
     }
   }
 
-  dialog {
+  .image-dialog {
+    @apply z-[2] m-auto h-fit max-w-[960px] p-0 outline-none;
     background: none;
+  }
 
-    @apply m-auto h-fit w-[960px] p-0;
+  .image-dialog-content {
+    @apply flex max-h-[80vh] max-w-[80vh] transform items-center justify-center rounded-lg bg-black bg-opacity-75 p-6 shadow-lg;
+    border: 2px solid var(--txt-crimson);
+  }
+
+  .image-loading-box {
+    @apply inset-0 flex items-center justify-center p-6;
+    color: var(--txt-crimson);
   }
 }
