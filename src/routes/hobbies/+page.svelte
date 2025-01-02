@@ -62,6 +62,6 @@
         </div>
       </div>
     </div>
-    <ImageModal />
   </div>
+  <ImageModal />
 </main>
