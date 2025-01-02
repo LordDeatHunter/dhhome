@@ -96,6 +96,19 @@
     @apply grid grid-cols-1 gap-4 transition-all duration-300 ease-in-out md:grid-cols-2 lg:grid-cols-3;
   }
 
+  .sort-button {
+    @apply cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold uppercase shadow-lg transition-all duration-300 ease-in-out;
+    border: 2px solid var(--txt-crimson);
+    color: var(--txt-crimson);
+
+    &:hover {
+      @apply scale-105;
+
+      background: var(--txt-crimson-faded);
+      color: var(--txt-crimson-lighter);
+    }
+  }
+
   .bottlecaps {
     @apply grid grid-cols-2 gap-4 transition-all duration-300 ease-in-out sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7;
   }
