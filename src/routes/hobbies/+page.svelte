@@ -9,15 +9,22 @@
   export let data: Bottlecaps;
 
   let sortBy = 'name';
+  let filteredBottlecaps = [] as Array<BottlecapType>;
   let sortedBottlecaps = [] as Array<BottlecapType>;
+  let search = '';
 
-  $: {
-    sortedBottlecaps = Object.values(data).sort((a, b) =>
-      sortBy === 'name'
-        ? a.name.localeCompare(b.name) || a.country.localeCompare(b.country)
-        : a.country.localeCompare(b.country) || a.name.localeCompare(b.name)
-    );
-  }
+  $: searchWords = search.trim().toLowerCase().split(' ');
+
+  $: filteredBottlecaps = Object.values(data).filter((bottlecap) => {
+    const bottlecapWords = `${bottlecap.name} ${bottlecap.country}`.toLowerCase();
+    return searchWords.every((word) => bottlecapWords.includes(word));
+  });
+
+  $: sortedBottlecaps = filteredBottlecaps.sort((a, b) =>
+    sortBy === 'name'
+      ? a.name.localeCompare(b.name) || a.country.localeCompare(b.country)
+      : a.country.localeCompare(b.country) || a.name.localeCompare(b.name)
+  );
 </script>
 
 <main id="contact" class="bg-contact flex flex-col items-center gap-0">
@@ -31,15 +38,21 @@
         class={`sort-button ${sortBy === 'name' ? 'active' : ''}`}
         on:click={() => (sortBy = 'name')}
       >
-        Sort by Name
+        {sortBy === 'name' ? 'Sorted by Name' : 'Sort by Name'}
       </button>
       <button
         class={`sort-button ${sortBy === 'country' ? 'active' : ''}`}
         on:click={() => (sortBy = 'country')}
       >
-        Sort by Country
+        {sortBy === 'country' ? 'Sorted by Country' : 'Sort by Country'}
       </button>
     </div>
+    <input
+      type="text"
+      placeholder="Search bottlecaps..."
+      class="search-input slower-fade-in"
+      bind:value={search}
+    />
     <div class="flex justify-center gap-4">
       <div class="slower-fade-in flex max-w-[1440px] flex-col gap-8">
         <div class="bottlecaps">
