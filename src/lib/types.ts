@@ -36,5 +36,6 @@ export type Bottlecaps = Record<string, Bottlecap>;
 export interface Bottlecap {
   country: string;
   id: string;
+  internalId: string;
   name: string;
 }

@@ -9,7 +9,7 @@
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="flex h-40 w-40 items-center justify-center">
         <img
-          src={`assets/caps/small/${bottlecap.id}.jpg`}
+          src={`assets/caps/small/${bottlecap.internalId}.jpg`}
           alt={bottlecap.name}
           class="bottlecap-img-preview"
         />

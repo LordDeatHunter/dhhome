@@ -57,6 +57,11 @@ def get_cap_name(cap):
         name = get_name_from_info(cap['info'])
     elif 'description' in cap:
         name = clean_newlines(cap['description'])
+
+    if 'Заjечарско' in name:
+        # Replace latin 'j' with cyrillic 'ј'
+        name = name.replace('Заjечарско', 'Зајечарско')
+
     return name.strip()
 
 
@@ -71,6 +76,7 @@ def clean_data():
     for cap_id, cap in caps.items():
         caps[cap_id] = {
             "id": cap_id.split('-')[0],
+            "internalId": cap_id,
             'country': cap['country']['name'] if 'country' in cap else '',
             # 'description': cap['description'].replace('\n', ' ') if 'description' in cap else '',
             # 'info': cap['info'] if 'info' in cap else '',
