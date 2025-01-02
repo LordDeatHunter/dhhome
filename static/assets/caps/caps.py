@@ -40,15 +40,24 @@ def fetch_all_caps():
         json.dump(caps, f, indent=2, ensure_ascii=False)
 
 
+def get_name_from_info(info):
+    split_brand_info = ' '.join(info.split('Brand:')[1].split(' ')[1:])
+    return clean_newlines(split_brand_info)
+
+
+def clean_newlines(text):
+    return text.replace('\r', '\n').split('\n')[0]
+
+
 def get_cap_name(cap):
     name = ''
     if 'brands' in cap and cap['brands']:
         name = cap['brands'][0]['name']
     elif 'info' in cap and 'Brand:' in cap['info']:
-        name = cap['info'].split('Brand:')[1].split(' ')[1]
+        name = get_name_from_info(cap['info'])
     elif 'description' in cap:
-        name = cap['description']
-    return name
+        name = clean_newlines(cap['description'])
+    return name.strip()
 
 
 def clean_data():

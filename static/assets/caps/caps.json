@@ -17,7 +17,7 @@
   "281001": {
     "id": "281001",
     "country": "Germany",
-    "name": "ABK Aktienbrauerei \r\nKaufbeuren \r\nSeit 1308 Since"
+    "name": "ABK Aktienbrauerei"
   },
   "94925": {
     "id": "94925",
@@ -42,7 +42,7 @@
   "268137": {
     "id": "268137",
     "country": "Serbia",
-    "name": "Apatinsko"
+    "name": "Apatinsko Pivo"
   },
   "52972": {
     "id": "52972",
@@ -52,12 +52,12 @@
   "77398": {
     "id": "77398",
     "country": "Germany",
-    "name": "Arcobräu Moos \r\nMooser Liesl \r\nSeit 1567"
+    "name": "Arcobräu Moos"
   },
   "39817": {
     "id": "39817",
     "country": "Germany",
-    "name": "Auer"
+    "name": "Auer Bier."
   },
   "94536": {
     "id": "94536",
@@ -78,11 +78,6 @@
     "id": "244587",
     "country": "Romania",
     "name": "Azuga"
-  },
-  "260988": {
-    "id": "260988",
-    "country": "-Multiple countries",
-    "name": "B"
   },
   "139327": {
     "id": "139327",
@@ -109,6 +104,11 @@
     "country": "United Kingdom",
     "name": "Banks*s"
   },
+  "184235": {
+    "id": "184235",
+    "country": "-Multiple countries",
+    "name": "Bavaria"
+  },
   "224074": {
     "id": "224074",
     "country": "Germany",
@@ -122,7 +122,7 @@
   "33064": {
     "id": "33064",
     "country": "Germany",
-    "name": "Bayerisches Bier\r\neinzig in der Welt"
+    "name": "Bayerisches Bier"
   },
   "132977": {
     "id": "132977",
@@ -132,7 +132,7 @@
   "256262": {
     "id": "256262",
     "country": "-Multiple countries",
-    "name": "Beer"
+    "name": "Beer Singha"
   },
   "194763": {
     "id": "194763",
@@ -162,7 +162,7 @@
   "164405": {
     "id": "164405",
     "country": "Vietnam",
-    "name": "Bia"
+    "name": "Bia Saigon Export"
   },
   "263200": {
     "id": "263200",
@@ -204,6 +204,11 @@
     "country": "France",
     "name": "Brasserie Uberach"
   },
+  "260988": {
+    "id": "260988",
+    "country": "-Multiple countries",
+    "name": "Brooklyn Pilsner"
+  },
   "174104": {
     "id": "174104",
     "country": "France",
@@ -232,7 +237,7 @@
   "79922": {
     "id": "79922",
     "country": "Thailand",
-    "name": "Chang"
+    "name": "Chang Beer"
   },
   "178678": {
     "id": "178678",
@@ -257,7 +262,7 @@
   "290229": {
     "id": "290229",
     "country": "Colombia",
-    "name": "Club"
+    "name": "Club Colombia"
   },
   "162460": {
     "id": "162460",
@@ -277,7 +282,7 @@
   "110731": {
     "id": "110731",
     "country": "Slovenia",
-    "name": "Crazy"
+    "name": "Crazy Duck Pale Ale"
   },
   "26736": {
     "id": "26736",
@@ -312,7 +317,12 @@
   "36638": {
     "id": "36638",
     "country": "Germany",
-    "name": "Deutsches Bier\r\nNach dem Reinheitsgebot gebraut\r\nDie Deutschen Brauer"
+    "name": "Deutsches Bier"
+  },
+  "216432": {
+    "id": "216432",
+    "country": "-Multiple countries",
+    "name": "Dos Equis XX"
   },
   "153091": {
     "id": "153091",
@@ -322,7 +332,7 @@
   "262612": {
     "id": "262612",
     "country": "Turkey",
-    "name": "Efes"
+    "name": "Efes Draft"
   },
   "276558": {
     "id": "276558",
@@ -362,12 +372,12 @@
   "212383": {
     "id": "212383",
     "country": "Germany",
-    "name": "Franz Josef\nBayerisch Helles"
+    "name": "Franz Josef"
   },
   "149085": {
     "id": "149085",
     "country": "Germany",
-    "name": "Franziskaner Bräu-München\r\nHelles"
+    "name": "Franziskaner Bräu-München"
   },
   "224814": {
     "id": "224814",
@@ -378,6 +388,11 @@
     "id": "184028",
     "country": "Germany",
     "name": "Franziskaner Weissbier"
+  },
+  "71422": {
+    "id": "71422",
+    "country": "Germany",
+    "name": "Fürst Wallerstein"
   },
   "215106": {
     "id": "215106",
@@ -392,12 +407,12 @@
   "235142": {
     "id": "235142",
     "country": "Germany",
-    "name": "Giesinger Bräu\r\nMünchen"
+    "name": "Giesinger Bräu"
   },
   "86544": {
     "id": "86544",
     "country": "Germany",
-    "name": "Giesinger Bräu\r\nMünchen"
+    "name": "Giesinger Bräu"
   },
   "78897": {
     "id": "78897",
@@ -407,7 +422,7 @@
   "74344": {
     "id": "74344",
     "country": "Austria",
-    "name": "Gletscher Bräu\r\ntwist off aufdrehen"
+    "name": "Gletscher Bräu"
   },
   "114371": {
     "id": "114371",
@@ -527,7 +542,7 @@
   "76359": {
     "id": "76359",
     "country": "Germany",
-    "name": "Isar"
+    "name": "Isar Helles"
   },
   "120448": {
     "id": "120448",
@@ -567,7 +582,7 @@
   "23764": {
     "id": "23764",
     "country": "Germany",
-    "name": "Kirin Ichiban\r\n一番搾り"
+    "name": "Kirin Ichiban"
   },
   "25086": {
     "id": "25086",
@@ -577,17 +592,17 @@
   "112827": {
     "id": "112827",
     "country": "Germany",
-    "name": "Klosterbrauerei Andechs\nSeit 1455"
+    "name": "Klosterbrauerei Andechs"
   },
   "112386": {
     "id": "112386",
     "country": "North Macedonia",
-    "name": "Krali"
+    "name": "Krali Marko"
   },
   "293872": {
     "id": "293872",
     "country": "North Macedonia",
-    "name": "Krali"
+    "name": "Krali Marko"
   },
   "316061": {
     "id": "316061",
@@ -682,7 +697,7 @@
   "155384": {
     "id": "155384",
     "country": "Germany",
-    "name": "Marie"
+    "name": "Marie Hausbrendel"
   },
   "102653": {
     "id": "102653",
@@ -784,15 +799,15 @@
     "country": "Germany",
     "name": "Original Münchner Hell"
   },
-  "147469": {
-    "id": "147469",
-    "country": "Austria",
-    "name": "Ottakringer"
-  },
   "153142": {
     "id": "153142",
     "country": "Austria",
     "name": "Ottakringer Brauerei Wien 1837"
+  },
+  "147469": {
+    "id": "147469",
+    "country": "Austria",
+    "name": "Ottakringer Helles 0,33L"
   },
   "70724": {
     "id": "70724",
@@ -807,12 +822,7 @@
   "128543": {
     "id": "128543",
     "country": "Germany",
-    "name": "Patronus"
-  },
-  "106086": {
-    "id": "106086",
-    "country": "Germany",
-    "name": "Paulaner"
+    "name": "Patronus Weissbier powered by Perlenbacher"
   },
   "172141": {
     "id": "172141",
@@ -824,10 +834,10 @@
     "country": "Germany",
     "name": "Paulaner München"
   },
-  "166450": {
-    "id": "166450",
-    "country": "France",
-    "name": "Perlenbacher"
+  "106086": {
+    "id": "106086",
+    "country": "Germany",
+    "name": "Paulaner Zwickl Bier"
   },
   "254309": {
     "id": "254309",
@@ -837,7 +847,12 @@
   "267400": {
     "id": "267400",
     "country": "Germany",
-    "name": "Perlenbacher\nshiny"
+    "name": "Perlenbacher"
+  },
+  "166450": {
+    "id": "166450",
+    "country": "France",
+    "name": "Perlenbacher - Brewed by Brasserie Champigneulles SAS for Lidl Dienstleistung GmbH & Co. KG and his partners"
   },
   "105658": {
     "id": "105658",
@@ -852,7 +867,7 @@
   "76630": {
     "id": "76630",
     "country": "Belgium",
-    "name": "Piraat"
+    "name": "Piraat Triple Hop"
   },
   "30828": {
     "id": "30828",
@@ -867,7 +882,7 @@
   "135800": {
     "id": "135800",
     "country": "Czech Republic",
-    "name": "Primátor craft brewery IPA\nNáchod since 1872 \nCzech Republic"
+    "name": "Primátor craft brewery IPA"
   },
   "65433": {
     "id": "65433",
@@ -877,12 +892,12 @@
   "101167": {
     "id": "101167",
     "country": "Finland",
-    "name": "Pyynikin Käsityöläispanimo\r\nPyynikki Craft Brewery P"
+    "name": "Pyynikin Käsityöläispanimo"
   },
   "145765": {
     "id": "145765",
     "country": "Germany",
-    "name": "Q"
+    "name": "Quartiermeister Bio-Helles"
   },
   "279733": {
     "id": "279733",
@@ -912,7 +927,7 @@
   "86885": {
     "id": "86885",
     "country": "Germany",
-    "name": "Riegele\r\n...Schönes Leben Hier!"
+    "name": "Riegele"
   },
   "112773": {
     "id": "112773",
@@ -923,21 +938,6 @@
     "id": "91446",
     "country": "Germany",
     "name": "Rügener Insel-Brauerei"
-  },
-  "184235": {
-    "id": "184235",
-    "country": "-Multiple countries",
-    "name": "S"
-  },
-  "308353": {
-    "id": "308353",
-    "country": "Hungary",
-    "name": "S"
-  },
-  "54859": {
-    "id": "54859",
-    "country": "Hungary",
-    "name": "S"
   },
   "111846": {
     "id": "111846",
@@ -982,7 +982,7 @@
   "131338": {
     "id": "131338",
     "country": "Denmark",
-    "name": "Schiøtz\r\nSchiotz"
+    "name": "Schiøtz"
   },
   "23736": {
     "id": "23736",
@@ -1003,6 +1003,16 @@
     "id": "182201",
     "country": "-Multiple countries",
     "name": "Sol"
+  },
+  "308353": {
+    "id": "308353",
+    "country": "Hungary",
+    "name": "Soproni"
+  },
+  "54859": {
+    "id": "54859",
+    "country": "Hungary",
+    "name": "Soproni"
   },
   "233637": {
     "id": "233637",
@@ -1044,20 +1054,15 @@
     "country": "Denmark",
     "name": "Svaneke"
   },
-  "129098": {
-    "id": "129098",
-    "country": "Hungary",
-    "name": "Szent"
-  },
   "131181": {
     "id": "131181",
     "country": "Hungary",
     "name": "Szent András"
   },
-  "180423": {
-    "id": "180423",
-    "country": "Romania",
-    "name": "T"
+  "129098": {
+    "id": "129098",
+    "country": "Hungary",
+    "name": "Szent András Betyár Király"
   },
   "75626": {
     "id": "75626",
@@ -1067,7 +1072,7 @@
   "77863": {
     "id": "77863",
     "country": "Denmark",
-    "name": "Thisted Bryghus 1902\r\nVi Brygger Smagsoplevelser"
+    "name": "Thisted Bryghus 1902"
   },
   "103508": {
     "id": "103508",
@@ -1077,7 +1082,12 @@
   "283349": {
     "id": "283349",
     "country": "Romania",
-    "name": "Tiltott Csíki sör\nMade in Transylvania"
+    "name": "Tiltott Csíki sör"
+  },
+  "180423": {
+    "id": "180423",
+    "country": "Romania",
+    "name": "Timisoreana"
   },
   "127221": {
     "id": "127221",
@@ -1112,12 +1122,12 @@
   "39250": {
     "id": "39250",
     "country": "Germany",
-    "name": "Ustersbacher Bier\nBSU"
+    "name": "Ustersbacher Bier"
   },
   "114437": {
     "id": "114437",
     "country": "United Kingdom",
-    "name": "W"
+    "name": "Wainwright - The Golden Beer"
   },
   "88671": {
     "id": "88671",
@@ -1132,12 +1142,12 @@
   "220137": {
     "id": "220137",
     "country": "Germany",
-    "name": "Wirts"
+    "name": "Wirts Madl Bayrisch Hell 1516"
   },
   "95347": {
     "id": "95347",
     "country": "Germany",
-    "name": "Wirts"
+    "name": "Wirts Madl Bayrisch Hell 1516"
   },
   "94516": {
     "id": "94516",
@@ -1147,27 +1157,17 @@
   "202706": {
     "id": "202706",
     "country": "Germany",
-    "name": "Wolpertinger Deutsches Bier\nSeit 1878 WB"
+    "name": "Wolpertinger Deutsches Bier"
   },
   "168121": {
     "id": "168121",
     "country": "Germany",
-    "name": "Wunder Braeu\nBio. Handwerk. Wunderbar!"
-  },
-  "216432": {
-    "id": "216432",
-    "country": "-Multiple countries",
-    "name": "XX"
-  },
-  "71422": {
-    "id": "71422",
-    "country": "Germany",
-    "name": "Z"
+    "name": "Wunder Braeu"
   },
   "222937": {
     "id": "222937",
     "country": "North Macedonia",
-    "name": "Zlaten Dab\r\n19 Prilepska Pivarnica 24\r\nMacedonian Premium Beer"
+    "name": "Zlaten Dab"
   },
   "229848": {
     "id": "229848",
@@ -1177,7 +1177,7 @@
   "182920": {
     "id": "182920",
     "country": "Bosnia and Herzegovina",
-    "name": "Бањалучко\nсвијетло пиво\nОд 1873"
+    "name": "Бањалучко"
   },
   "159009": {
     "id": "159009",
@@ -1212,12 +1212,7 @@
   "121138": {
     "id": "121138",
     "country": "Bulgaria",
-    "name": "Пиринско"
-  },
-  "311430": {
-    "id": "311430",
-    "country": "North Macedonia",
-    "name": "Светло 100 \nСкопско 24 1924"
+    "name": "Пиринско Младо Пиво (Pirinsko Mlado Pivo)"
   },
   "89634": {
     "id": "89634",
@@ -1263,5 +1258,10 @@
     "id": "92750",
     "country": "North Macedonia",
     "name": "Скопско"
+  },
+  "311430": {
+    "id": "311430",
+    "country": "North Macedonia",
+    "name": "Скопско 100 години"
   }
 }
