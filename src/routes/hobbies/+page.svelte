@@ -53,6 +53,9 @@
       class="search-input slower-fade-in"
       bind:value={search}
     />
+    <h3 class="slower-fade-in text-3xl font-[960]">
+      Showing {sortedBottlecaps.length} / {Object.keys(data).length} bottlecaps.
+    </h3>
     <div class="flex justify-center gap-4">
       <div class="slower-fade-in flex max-w-[1440px] flex-col gap-8">
         <div class="bottlecaps">
