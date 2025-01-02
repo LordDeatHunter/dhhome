@@ -8,7 +8,7 @@
 </script>
 
 <main id="contact" class="bg-contact flex flex-col items-center gap-0">
-  <div class="grow-in flex flex-col items-center justify-center gap-4 pt-12">
+  <div class="page-content">
     <h1 class="fade-in text-7xl font-[960]">Hobbies</h1>
     <NavBar />
     <div class="divider-h slower-fade-in" />

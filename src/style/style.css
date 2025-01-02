@@ -3,6 +3,10 @@
 @tailwind base;
 
 @layer base {
+  .page-content {
+    @apply grow-in flex flex-col items-center justify-center gap-4 pb-24 pt-12;
+  }
+
   #home {
     color: var(--txt-black);
 
