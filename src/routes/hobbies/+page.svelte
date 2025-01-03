@@ -32,7 +32,7 @@
     <h1 class="fade-in text-7xl font-[960]">Hobbies</h1>
     <NavBar />
     <div class="divider-h slower-fade-in" />
-    <h2 class="fade-in text-5xl font-[960]">Beer Bottlecap Collection</h2>
+    <h2 class="fade-in text-center text-5xl font-[960]">Beer Bottlecap Collection</h2>
     <div class="mb-8 flex justify-center gap-4">
       <button
         class={`sort-button ${sortBy === 'name' ? 'active' : ''}`}
@@ -53,7 +53,7 @@
       class="search-input slower-fade-in"
       bind:value={search}
     />
-    <h3 class="slower-fade-in text-3xl font-[960]">
+    <h3 class="slower-fade-in text-center text-3xl font-[960]">
       Showing {sortedBottlecaps.length} / {Object.keys(data).length} bottlecaps.
     </h3>
     <div class="flex justify-center gap-4">
