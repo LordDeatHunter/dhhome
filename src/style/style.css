@@ -152,6 +152,8 @@
     }
 
     &:hover img {
+      @apply animation-rotate;
+
       border: 6px solid var(--txt-crimson);
     }
   }
