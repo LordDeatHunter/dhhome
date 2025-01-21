@@ -3,7 +3,7 @@
   import NavBar from '$components/NavBar.svelte';
   import ContactLink from '$components/ContactLink.svelte';
 
-  let copied = false;
+  let copied = $state(false);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -25,7 +25,7 @@
       actionIcon="pixelarticons:copy"
       actionText={copied ? 'Copied!' : 'Copy'}
     />
-    <div class="divider-h-dark" />
+    <div class="divider-h-dark"></div>
     <ContactLink
       text="GitHub"
       mainIcon="simple-icons:github"
@@ -33,7 +33,7 @@
       actionIcon="pixelarticons:external-link"
       actionText="Open"
     />
-    <div class="divider-h-dark" />
+    <div class="divider-h-dark"></div>
     <ContactLink
       text="CurseForge"
       mainIcon="simple-icons:curseforge"
@@ -41,7 +41,7 @@
       actionIcon="pixelarticons:external-link"
       actionText="Open"
     />
-    <div class="divider-h-dark" />
+    <div class="divider-h-dark"></div>
     <ContactLink
       text="Itch.io"
       mainIcon="simple-icons:itchdotio"

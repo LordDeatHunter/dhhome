@@ -4,15 +4,19 @@
   import type { ProjectCategory } from '$lib/types';
   import Icon from '@iconify/svelte';
 
-  export let projectCategory: ProjectCategory;
-  let showProjects = true;
+  interface Props {
+    projectCategory: ProjectCategory;
+  }
+
+  let { projectCategory }: Props = $props();
+  let showProjects = $state(true);
 </script>
 
 <div class="project-container">
   <h2>{projectCategory.title}</h2>
   {@html projectCategory.description}
   <button
-    on:click={() => (showProjects = !showProjects)}
+    onclick={() => (showProjects = !showProjects)}
     class="flex items-center justify-center gap-2 text-2xl"
   >
     {showProjects

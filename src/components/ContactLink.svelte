@@ -1,11 +1,21 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
 
-  export let text: string;
-  export let mainIcon: string;
-  export let action: () => void;
-  export let actionIcon: string;
-  export let actionText: string;
+  interface Props {
+    text: string;
+    mainIcon: string;
+    action: () => void;
+    actionIcon: string;
+    actionText: string;
+  }
+
+  let {
+    text,
+    mainIcon,
+    action,
+    actionIcon,
+    actionText
+  }: Props = $props();
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.code === 'Enter' || event.code === 'Space') {
@@ -20,8 +30,8 @@
     <h2 class="text-2xl font-[960]">{text}</h2>
   </div>
   <div
-    on:click={action}
-    on:keydown={handleKeyDown}
+    onclick={action}
+    onkeydown={handleKeyDown}
     class="contact-action"
     aria-label={actionText}
     tabindex="0"

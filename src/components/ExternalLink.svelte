@@ -1,8 +1,13 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
 
-  export let url;
-  export let icon = 'pixelarticons:external-link';
+  interface Props {
+    url: any;
+    icon?: string;
+    children?: import('svelte').Snippet;
+  }
+
+  let { url, icon = 'pixelarticons:external-link', children }: Props = $props();
 </script>
 
 <a
@@ -10,8 +15,8 @@
   target="_blank"
   rel="noopener noreferrer"
   class="button flex w-fit items-center gap-1"
-  on:click|stopPropagation
+  onclick={(e) => e.stopPropagation()}
 >
-  <slot />
+  {@render children?.()}
   <Icon {icon} class="h-8 w-8" />
 </a>

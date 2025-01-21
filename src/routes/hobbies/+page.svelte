@@ -6,43 +6,47 @@
   import type { Bottlecap as BottlecapType } from '$lib/types';
   import ImageModal from '$components/ImageModal.svelte';
 
-  export let data: Bottlecaps;
+  interface Props {
+    data: Bottlecaps;
+  }
 
-  let sortBy = 'name';
-  let filteredBottlecaps = [] as Array<BottlecapType>;
-  let sortedBottlecaps = [] as Array<BottlecapType>;
-  let search = '';
+  let { data }: Props = $props();
 
-  $: searchWords = search.trim().toLowerCase().split(' ');
+  let sortBy = $state('name');
+  let search = $state('');
 
-  $: filteredBottlecaps = Object.values(data).filter((bottlecap) => {
-    const bottlecapWords = `${bottlecap.name} ${bottlecap.country}`.toLowerCase();
-    return searchWords.every((word) => bottlecapWords.includes(word));
+  let searchWords = $derived(search.trim().toLowerCase().split(' '));
+
+  const sortedBottlecaps = $derived.by<Array<BottlecapType>>(() => {
+    const filteredBottlecaps = Object.values(data).filter((bottlecap) => {
+      const bottlecapWords = `${bottlecap.name} ${bottlecap.country}`.toLowerCase();
+      return searchWords.every((word) => bottlecapWords.includes(word));
+    });
+
+    return filteredBottlecaps.sort((a, b) =>
+      sortBy === 'name'
+        ? a.name.localeCompare(b.name) || a.country.localeCompare(b.country)
+        : a.country.localeCompare(b.country) || a.name.localeCompare(b.name)
+    );
   });
-
-  $: sortedBottlecaps = filteredBottlecaps.sort((a, b) =>
-    sortBy === 'name'
-      ? a.name.localeCompare(b.name) || a.country.localeCompare(b.country)
-      : a.country.localeCompare(b.country) || a.name.localeCompare(b.name)
-  );
 </script>
 
 <main id="contact" class="bg-contact flex flex-col items-center gap-0">
   <div class="page-content">
     <h1 class="fade-in text-7xl font-[960]">Hobbies</h1>
     <NavBar />
-    <div class="divider-h slower-fade-in" />
+    <div class="divider-h slower-fade-in"></div>
     <h2 class="fade-in text-center text-5xl font-[960]">Beer Bottlecap Collection</h2>
     <div class="mb-8 flex justify-center gap-4">
       <button
         class={`sort-button ${sortBy === 'name' ? 'active' : ''}`}
-        on:click={() => (sortBy = 'name')}
+        onclick={() => (sortBy = 'name')}
       >
         {sortBy === 'name' ? 'Sorted by Name' : 'Sort by Name'}
       </button>
       <button
         class={`sort-button ${sortBy === 'country' ? 'active' : ''}`}
-        on:click={() => (sortBy = 'country')}
+        onclick={() => (sortBy = 'country')}
       >
         {sortBy === 'country' ? 'Sorted by Country' : 'Sort by Country'}
       </button>

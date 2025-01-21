@@ -2,18 +2,27 @@
   import { Technologies } from '$lib/types';
   import Icon from '@iconify/svelte';
 
-  export let technologies: Array<keyof typeof Technologies>;
+  interface Props {
+    technologies: Array<keyof typeof Technologies>;
+  }
 
-  let collapsed = true;
+  let { technologies }: Props = $props();
+
+  let collapsed = $state(true);
+
+  const setCollapsed = (value: boolean) => (event: MouseEvent) => {
+    event.stopPropagation();
+    collapsed = value;
+  };
 </script>
 
 {#if collapsed}
-  <button on:click|stopPropagation={() => (collapsed = false)} class="technologies-button">
+  <button onclick={setCollapsed(false)} class="technologies-button">
     Technologies
     <Icon icon="pixelarticons:chevron-down" class="h-8 w-8" />
   </button>
 {:else}
-  <button on:click|stopPropagation={() => (collapsed = true)} class="technologies-button">
+  <button onclick={setCollapsed(true)} class="technologies-button">
     Technologies
     <Icon icon="pixelarticons:chevron-up" class="h-8 w-8" />
   </button>

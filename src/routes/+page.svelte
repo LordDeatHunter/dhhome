@@ -18,7 +18,7 @@
         Developer, known for making some notable Minecraft Mods.
       </p>
     </div>
-    <div class="divider-h slower-fade-in" />
+    <div class="divider-h slower-fade-in"></div>
     <div class="slower-fade-in gap-12">
       <NavBar />
     </div>

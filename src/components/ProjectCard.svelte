@@ -4,20 +4,24 @@
   import ExternalLink from '$components/ExternalLink.svelte';
   import Technologies from '$components/Technologies.svelte';
 
-  export let project: Project;
+  interface Props {
+    project: Project;
+  }
+
+  let { project }: Props = $props();
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 <div
   class="project-card flex flex-col items-center justify-between gap-8"
-  on:click={() => selectedProject.set(project)}
+  onclick={() => selectedProject.set(project)}
 >
   <div class="flex flex-col justify-between gap-2">
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="flex h-40 w-40 items-center justify-center">
         <img src={project.img} alt={project.title} class="project-img-preview" />
       </div>
-      <div class="divider-h" />
+      <div class="divider-h"></div>
       <h2 class="title">{project.title}</h2>
       <Technologies technologies={project.technologies} />
     </div>
