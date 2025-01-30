@@ -1,34 +1,7 @@
 <script lang="ts">
   import '$style/style.css';
   import NavBar from '$components/NavBar.svelte';
-  import type { Bottlecaps } from '$lib/types';
-  import Bottlecap from '$components/Bottlecap.svelte';
-  import type { Bottlecap as BottlecapType } from '$lib/types';
-  import ImageModal from '$components/ImageModal.svelte';
-
-  interface Props {
-    data: Bottlecaps;
-  }
-
-  let { data }: Props = $props();
-
-  let sortBy = $state('name');
-  let search = $state('');
-
-  let searchWords = $derived(search.trim().toLowerCase().split(' '));
-
-  const sortedBottlecaps = $derived.by<Array<BottlecapType>>(() => {
-    const filteredBottlecaps = Object.values(data).filter((bottlecap) => {
-      const bottlecapWords = `${bottlecap.name} ${bottlecap.country}`.toLowerCase();
-      return searchWords.every((word) => bottlecapWords.includes(word));
-    });
-
-    return filteredBottlecaps.sort((a, b) =>
-      sortBy === 'name'
-        ? a.name.localeCompare(b.name) || a.country.localeCompare(b.country)
-        : a.country.localeCompare(b.country) || a.name.localeCompare(b.name)
-    );
-  });
+  import HobbyLink from '$components/HobbyLink.svelte';
 </script>
 
 <main id="contact" class="bg-contact flex flex-col items-center gap-0">
@@ -36,39 +9,20 @@
     <h1 class="fade-in text-7xl font-[960]">Hobbies</h1>
     <NavBar />
     <div class="divider-h slower-fade-in"></div>
-    <h2 class="fade-in text-center text-5xl font-[960]">Beer Bottlecap Collection</h2>
-    <div class="mb-8 flex justify-center gap-4">
-      <button
-        class={`sort-button ${sortBy === 'name' ? 'active' : ''}`}
-        onclick={() => (sortBy = 'name')}
-      >
-        {sortBy === 'name' ? 'Sorted by Name' : 'Sort by Name'}
-      </button>
-      <button
-        class={`sort-button ${sortBy === 'country' ? 'active' : ''}`}
-        onclick={() => (sortBy = 'country')}
-      >
-        {sortBy === 'country' ? 'Sorted by Country' : 'Sort by Country'}
-      </button>
-    </div>
-    <input
-      type="text"
-      placeholder="Search bottlecaps..."
-      class="search-input slower-fade-in"
-      bind:value={search}
-    />
-    <h3 class="slower-fade-in text-center text-3xl font-[960]">
-      Showing {sortedBottlecaps.length} / {Object.keys(data).length} bottlecaps.
-    </h3>
-    <div class="flex justify-center gap-4">
-      <div class="slower-fade-in flex max-w-[1440px] flex-col gap-8">
-        <div class="bottlecaps">
-          {#each sortedBottlecaps as bottlecap}
-            <Bottlecap {bottlecap} />
-          {/each}
-        </div>
-      </div>
-    </div>
   </div>
-  <ImageModal />
+
+  <div class="hobby-links">
+    <HobbyLink
+      href="hobbies/beercaps"
+      imgSrc="/assets/hobbies/bottlecap.jpg"
+      title="Beer Bottlecap Collection"
+      summary="My collection of beer bottlecaps."
+    />
+    <HobbyLink
+      href="hobbies/travelmap"
+      imgSrc="/assets/hobbies/europe-blue.svg"
+      title="Travel Map"
+      summary="A map of the countries I've visited."
+    />
+  </div>
 </main>

@@ -40,6 +40,7 @@
   }
 
   #projects,
+  #hobbies,
   #contact {
     color: var(--txt-crimson);
 
@@ -86,6 +87,7 @@
   }
 
   .project-img-preview,
+  .hobby-img-preview,
   .bottlecap-img-preview {
     @apply full object-contain text-center transition-all duration-300 ease-in-out;
 
@@ -285,6 +287,7 @@
   }
 
   .bg-projects,
+  .bg-hobbies,
   .bg-contact {
     @apply m-0 min-h-screen p-0 antialiased;
     background: var(--dark-1);
@@ -333,8 +336,41 @@
     }
   }
 
+  .hobby-links {
+    @apply flex flex-wrap gap-16;
+  }
+
+  .hobby-link {
+    @apply flex h-full max-w-[300px] flex-col items-center gap-2 rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out;
+
+    outline: 4px solid var(--txt-crimson);
+
+    h2.title {
+      @apply text-wrap text-center text-2xl font-bold;
+    }
+
+    p.summary {
+      @apply text-center text-sm;
+    }
+
+    &:hover {
+      @apply scale-105;
+
+      img {
+        @apply scale-110;
+      }
+    }
+  }
+
   .image-loading-box {
     @apply inset-0 flex items-center justify-center p-6;
     color: var(--txt-crimson);
+  }
+
+  .maplibre-visited {
+    @apply mt-6 aspect-[4/5] h-auto w-[80%] min-w-[60vw] rounded-lg shadow-lg;
+    @apply md:aspect-[16/9];
+
+    outline: 4px solid var(--txt-crimson);
   }
 }

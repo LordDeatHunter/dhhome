@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite dev",
-    "prebuild": "node scripts/generateMarkdown.js && cp static/assets/caps/caps.json src/lib",
+    "prebuild": "node scripts/generateMarkdown.js && node scripts/markMaps.js && cp static/assets/caps/caps.json src/lib",
     "cleanup": "rimraf ./build",
     "build": "bun cleanup && bun prebuild && vite build",
     "preview": "vite preview",
@@ -29,6 +29,7 @@
     "eslint-plugin-svelte": "^2.45.1",
     "globals": "^15.0.0",
     "highlight.js": "^11.10.0",
+    "maplibre-gl": "^5.0.1",
     "marked": "^14.1.2",
     "marked-highlight": "^2.1.4",
     "postcss": "^8.4.41",
@@ -45,6 +46,7 @@
   },
   "type": "module",
   "dependencies": {
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "svelte-maplibre-gl": "^0.1.1"
   }
 }
