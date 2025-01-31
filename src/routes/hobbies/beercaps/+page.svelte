@@ -93,13 +93,11 @@
     <h3 class="slower-fade-in text-center text-3xl font-[960]">
       Showing {sortedBottlecaps.length} / {Object.keys(data.caps).length} bottlecaps.
     </h3>
-    <div class="flex justify-center gap-4">
-      <div class="slower-fade-in flex max-w-[1440px] flex-col gap-8">
-        <div class="bottlecaps">
-          {#each sortedBottlecaps as bottlecap}
-            <Bottlecap {bottlecap} />
-          {/each}
-        </div>
+    <div class="slower-fade-in flex max-w-[1440px] flex-col justify-center gap-8 px-8">
+      <div class="bottlecaps">
+        {#each sortedBottlecaps as bottlecap}
+          <Bottlecap {bottlecap} />
+        {/each}
       </div>
     </div>
   </div>

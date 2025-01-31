@@ -337,7 +337,11 @@
   }
 
   .hobby-links {
-    @apply flex flex-wrap gap-16;
+    @apply flex flex-wrap justify-center gap-16 px-12;
+  }
+
+  .hobby-link-anchor {
+    @apply h-full w-full;
   }
 
   .hobby-link {
@@ -350,7 +354,7 @@
     }
 
     p.summary {
-      @apply text-center text-sm;
+      @apply slower-fade-in text-center text-sm;
     }
 
     &:hover {
