@@ -38,9 +38,9 @@ function markMap(map, markedCountries) {
     const { name_long: countryName } = properties;
 
     if (markedCountries.has(countryName)) {
-      properties.color = '#AAEE00';
+      properties.color = '#00AE00';
     } else {
-      properties.color = '#CC1414';
+      properties.color = '#AE0000';
     }
   });
 
