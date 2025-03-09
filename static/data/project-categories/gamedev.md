@@ -12,8 +12,6 @@ Python and MonoGame in C#.
 I also started participating in GameJams since around 2020, and over the years I've experimented with various game
 engines and frameworks, with my latest focus being on Godot.
 
-Most of the games I have available publicly were made during GameJams, and not much progress has been made on them since
-then.
+Most of the games I have available publicly were made during GameJams, and not much progress has been made on them since then.
 
-My most notable achievement as a team is the "Best Programmers" award in my country's local hosting of 2023 Global Game
-Jam.
+My most notable achievements as a team are 1st place, as well as the "Best Programmers" award in my country's local hosting of 2025 and 2023 Global Game Jam.
