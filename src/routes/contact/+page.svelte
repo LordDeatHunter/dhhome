@@ -19,11 +19,19 @@
   </div>
   <div class="contact-links">
     <ContactLink
-      text="Discord"
+      text="Discord Contact"
       mainIcon="simple-icons:discord"
       action={() => copyToClipboard('lorddeathunter')}
       actionIcon="pixelarticons:copy"
       actionText={copied ? 'Copied!' : 'Copy'}
+    />
+    <div class="divider-h-dark"></div>
+    <ContactLink
+      text="Personal Discord Server"
+      mainIcon="simple-icons:discord"
+      action={() => window.open('https://discord.gg/vcQEH4x6z2')}
+      actionIcon="pixelarticons:external-link"
+      actionText="Join"
     />
     <div class="divider-h-dark"></div>
     <ContactLink
