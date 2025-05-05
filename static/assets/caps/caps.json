@@ -497,12 +497,6 @@
     "country": "Austria",
     "name": "Gletscher Bräu"
   },
-  "114371": {
-    "id": "114371",
-    "internalId": "114371",
-    "country": "Austria",
-    "name": "Goldbräu drehen & öffnen"
-  },
   "135107": {
     "id": "135107",
     "internalId": "135107",
@@ -598,12 +592,6 @@
     "internalId": "243933",
     "country": "Poland",
     "name": "Heineken"
-  },
-  "173643": {
-    "id": "173643",
-    "internalId": "173643",
-    "country": "Austria",
-    "name": "Hell"
   },
   "140835": {
     "id": "140835",
@@ -965,12 +953,6 @@
     "country": "Czech Republic",
     "name": "P 1842"
   },
-  "233410": {
-    "id": "233410",
-    "internalId": "233410",
-    "country": "Austria",
-    "name": "Paracelsus Bio-Zwickl"
-  },
   "128543": {
     "id": "128543",
     "internalId": "128543",
@@ -1018,12 +1000,6 @@
     "internalId": "105658",
     "country": "Italy",
     "name": "Peroni Gran Riserva"
-  },
-  "116249": {
-    "id": "116249",
-    "internalId": "116249",
-    "country": "Austria",
-    "name": "Pils"
   },
   "76630": {
     "id": "76630",
@@ -1246,6 +1222,30 @@
     "internalId": "188117",
     "country": "-Multiple countries",
     "name": "Stella Artois"
+  },
+  "114371": {
+    "id": "114371",
+    "internalId": "114371",
+    "country": "Austria",
+    "name": "Stiegl Goldbräu"
+  },
+  "173643": {
+    "id": "173643",
+    "internalId": "173643",
+    "country": "Austria",
+    "name": "Stiegl Hell"
+  },
+  "233410": {
+    "id": "233410",
+    "internalId": "233410",
+    "country": "Austria",
+    "name": "Stiegl Paracelsus Bio-Zwickl"
+  },
+  "116249": {
+    "id": "116249",
+    "internalId": "116249",
+    "country": "Austria",
+    "name": "Stiegl Pils"
   },
   "144114": {
     "id": "144114",
