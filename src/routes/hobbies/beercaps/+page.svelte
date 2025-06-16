@@ -6,6 +6,7 @@
   import type { Bottlecap as BottlecapType } from '$lib/types';
   import ImageModal from '$components/ImageModal.svelte';
   import { FeatureState, FillLayer, GeoJSONSource, LineLayer, MapLibre } from 'svelte-maplibre-gl';
+  import { transliterate } from 'transliteration';
 
   interface Props {
     data: {
@@ -19,12 +20,25 @@
   let sortBy = $state('name');
   let search = $state('');
 
-  let searchWords = $derived(search.trim().toLowerCase().split(' '));
+  const searchWords = $derived(
+    search
+      .trim()
+      .toLowerCase()
+      .split(' ')
+      .filter((word) => word.length > 0)
+      .map((word) => transliterate(word))
+  );
 
   const sortedBottlecaps = $derived.by<Array<BottlecapType>>(() => {
     const filteredBottlecaps = Object.values(data.caps).filter((bottlecap) => {
-      const bottlecapWords = `${bottlecap.name} ${bottlecap.country}`.toLowerCase();
-      return searchWords.every((word) => bottlecapWords.includes(word));
+      const transliteratedBottlecapName = transliterate(bottlecap.name.toLowerCase());
+      const transliteratedBottlecapCountry = transliterate(bottlecap.country.toLowerCase());
+
+      return searchWords.every(
+        (word) =>
+          transliteratedBottlecapName.includes(word) ||
+          transliteratedBottlecapCountry.includes(word)
+      );
     });
 
     return filteredBottlecaps.sort((a, b) =>

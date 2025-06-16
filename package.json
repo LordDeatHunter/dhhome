@@ -47,6 +47,7 @@
   "type": "module",
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "svelte-maplibre-gl": "^0.1.1"
+    "svelte-maplibre-gl": "^0.1.1",
+    "transliteration": "^2.3.5"
   }
 }
