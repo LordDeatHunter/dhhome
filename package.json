@@ -46,6 +46,7 @@
   },
   "type": "module",
   "dependencies": {
+    "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
     "svelte-maplibre-gl": "^0.1.1",
     "transliteration": "^2.3.5"

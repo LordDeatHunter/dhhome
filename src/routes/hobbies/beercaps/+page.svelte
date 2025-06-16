@@ -7,6 +7,7 @@
   import ImageModal from '$components/ImageModal.svelte';
   import { FeatureState, FillLayer, GeoJSONSource, LineLayer, MapLibre } from 'svelte-maplibre-gl';
   import { transliterate } from 'transliteration';
+  import Fuse from 'fuse.js';
 
   interface Props {
     data: {
@@ -17,29 +18,33 @@
 
   let { data }: Props = $props();
 
+  const bottlecapList = Object.values(data.caps);
+  const strip = (str: string) =>
+    str
+      .replace(/[^a-z0-9\s]/gi, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+  const enrichedList = bottlecapList.map((cap) => ({
+    orig: cap,
+    tname: strip(transliterate(cap.name.toLowerCase())),
+    tcountry: strip(transliterate(cap.country.toLowerCase()))
+  }));
+
+  const fuse = $derived(
+    new Fuse(enrichedList, {
+      keys: ['tname', 'tcountry'],
+      threshold: 0.3,
+      ignoreLocation: true
+    })
+  );
+
   let sortBy = $state('name');
   let search = $state('');
 
-  const searchWords = $derived(
-    search
-      .trim()
-      .toLowerCase()
-      .split(' ')
-      .filter((word) => word.length > 0)
-      .map((word) => transliterate(word))
-  );
-
   const sortedBottlecaps = $derived.by<Array<BottlecapType>>(() => {
-    const filteredBottlecaps = Object.values(data.caps).filter((bottlecap) => {
-      const transliteratedBottlecapName = transliterate(bottlecap.name.toLowerCase());
-      const transliteratedBottlecapCountry = transliterate(bottlecap.country.toLowerCase());
-
-      return searchWords.every(
-        (word) =>
-          transliteratedBottlecapName.includes(word) ||
-          transliteratedBottlecapCountry.includes(word)
-      );
-    });
+    const term = strip(transliterate(search.toLowerCase()));
+    const filteredBottlecaps = term ? fuse.search(term).map((r) => r.item.orig) : bottlecapList;
 
     return filteredBottlecaps.sort((a, b) =>
       sortBy === 'name'
