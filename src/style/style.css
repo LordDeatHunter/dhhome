@@ -45,7 +45,7 @@
     color: var(--txt-crimson);
 
     p {
-      color: var(--txt-light-red);
+      color: var(--txt-crimson-light);
     }
 
     .divider-h {
@@ -76,7 +76,7 @@
     }
 
     .contact-action {
-      color: var(--txt-light-red);
+      color: var(--txt-crimson-light);
       @apply flex w-fit transform cursor-pointer items-center gap-2 pl-14 transition-all duration-200 ease-in-out;
 
       &:hover {

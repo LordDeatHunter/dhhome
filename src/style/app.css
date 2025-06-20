@@ -16,7 +16,7 @@
   --txt-crimson: #bd0e33;
   --txt-crimson-lighter: #f13243;
   --txt-crimson-faded: #bd0e3344;
-  --txt-light-red: #f15274;
+  --txt-crimson-light: #f15274;
   --dark-1: #101010;
   --dark-2: #1a1a1a;
   --dark-3: #212121;
@@ -26,6 +26,22 @@
   html,
   body {
     @apply overscroll-none;
+  }
+
+  .text-crimson {
+    color: var(--txt-crimson);
+  }
+
+  .text-crimson-lighter {
+    color: var(--txt-crimson-lighter);
+  }
+
+  .text-crimson-faded {
+    color: var(--txt-crimson-faded);
+  }
+
+  .text-crimson-light {
+    color: var(--txt-crimson-light);
   }
 
   .pulsate-scale {

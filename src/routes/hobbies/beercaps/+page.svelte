@@ -109,6 +109,13 @@
         {sortBy === 'country' ? 'Sorted by Country' : 'Sort by Country'}
       </button>
     </div>
+    <h4 class="slower-fade-in text-crimson-lighter text-center text-xl font-[960]">
+      All the cap images are taken by myself from my collection.<br />
+      The cap data is fetched from
+      <a href="https://crowncaps.info/" target="_blank" class="text-crimson-light hover:underline"
+        >CrownCaps</a
+      > and might not be fully accurate.
+    </h4>
     <h3 class="slower-fade-in text-center text-3xl font-[960]">
       Showing {sortedBottlecaps.length} / {Object.keys(data.caps).length} bottlecaps.
     </h3>
