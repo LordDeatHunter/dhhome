@@ -99,7 +99,8 @@
     "name": "Скопско 100 години"
   },
   "216432": {
-    "name": "Dos Equis XX"
+    "name": "Dos Equis XX",
+    "country": "Mexico"
   },
   "207348": {
     "name": "Зајечарско"
@@ -127,5 +128,20 @@
   },
   "233410": {
     "name": "Stiegl Paracelsus Bio-Zwickl"
+  },
+  "133237": {
+    "country": "United States"
+  },
+  "22845": {
+    "country": "United States"
+  },
+  "248338": {
+    "country": "Montenegro"
+  },
+  "213914": {
+    "country": "Japan"
+  },
+  "188117": {
+    "country": "Belgium"
   }
 }
