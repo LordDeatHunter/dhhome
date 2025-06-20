@@ -46,7 +46,7 @@
     const term = strip(transliterate(search.toLowerCase()));
     const filteredBottlecaps = term ? fuse.search(term).map((r) => r.item.orig) : bottlecapList;
 
-    return filteredBottlecaps.sort((a, b) =>
+    return [...filteredBottlecaps].sort((a, b) =>
       sortBy === 'name'
         ? a.name.localeCompare(b.name) || a.country.localeCompare(b.country)
         : a.country.localeCompare(b.country) || a.name.localeCompare(b.name)
