@@ -116,6 +116,7 @@
         >CrownCaps</a
       > and might not be fully accurate.
     </h4>
+    <h3 class="slower-fade-in text-center text-3xl font-[960]">Last updated: 30th of June, 2025</h3>
     <h3 class="slower-fade-in text-center text-3xl font-[960]">
       Showing {sortedBottlecaps.length} / {Object.keys(data.caps).length} bottlecaps.
     </h3>
