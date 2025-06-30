@@ -143,5 +143,32 @@
   },
   "188117": {
     "country": "Belgium"
+  },
+  "dh-1": {
+    "id": "dh-1",
+    "internalId": "dh-1",
+    "country": "Germany",
+    "name": "Hoppebräu Terveza"
+  },
+  "151061": {
+    "name": "Simsseer Braumanufaktur"
+  },
+  "112285": {
+    "name": "Munich Brew Mafia Craft Beer"
+  },
+  "148969": {
+    "name": "Cerveza Castellana Bernabeu Madrid"
+  },
+  "151903": {
+    "name": "Habesha"
+  },
+  "177783": {
+    "name": "Budweiser"
+  },
+  "112532": {
+    "name": "Crew Republic Easy Summer Beer"
+  },
+  "52951": {
+    "name": "Crew Republic DETOX Session IPA"
   }
 }

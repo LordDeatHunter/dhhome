@@ -69,11 +69,13 @@ def clean_data():
     print('Cleaning data')
 
     with open('caps_fetched.json', 'r', encoding='utf-8') as f:
-        caps = json.load(f)
+        caps_fetched = json.load(f)
     with open('manual_overrides.json', 'r', encoding='utf-8') as f:
         manual_overrides = json.load(f)
+    
+    caps = {}
 
-    for cap_id, cap in caps.items():
+    for cap_id, cap in caps_fetched.items():
         caps[cap_id] = {
             "id": cap_id.split('-')[0],
             "internalId": cap_id,
@@ -82,11 +84,17 @@ def clean_data():
             # 'info': cap['info'] if 'info' in cap else '',
             'name': get_cap_name(cap),
         }
+
         if cap_id not in manual_overrides:
             continue
-
+        
         for key, value in manual_overrides[cap_id].items():
             caps[cap_id][key] = value
+
+    for cap_id, cap in manual_overrides.items():
+        if 'id' not in cap:
+            continue
+        caps[cap_id] = cap
 
     caps = dict(sorted(caps.items(), key=lambda x: x[1]['name']))
 
