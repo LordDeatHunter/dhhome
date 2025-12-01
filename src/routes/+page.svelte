@@ -13,7 +13,7 @@
     <p class="slower-fade-in text-center text-[2rem]">[Software Engineer]</p>
     <img src="dh.png" class="mb-6 mt-8 h-auto w-40" alt="DeatHunter Avatar" />
     <div class="flex flex-col items-center justify-center gap-3">
-      <p class="fade-in m-0 max-w-md text-center text-xl font-normal">
+      <p class="fade-in m-0 max-w-md px-4 text-center text-base font-normal sm:text-lg md:text-xl">
         Professional Full-stack Engineer, ex-competitive programmer and passionate indie Game
         Developer, known for making some notable Minecraft Mods.
       </p>

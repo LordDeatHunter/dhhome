@@ -56,9 +56,9 @@
   let hoveredId: string | number | undefined = $state();
 </script>
 
-<main id="hobbies" class="bg-hobbies flex flex-col items-center gap-0">
+<main id="hobbies" class="bg-hobbies flex flex-col items-center gap-0 overflow-x-hidden">
   <div class="page-content">
-    <h1 class="fade-in text-center text-7xl font-[960]">Hobbies - Beer Bottlecap Collection</h1>
+    <h1 class="fade-in text-center text-2xl font-[960] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl">Hobbies - Beer Bottlecap Collection</h1>
     <NavBar />
     <div class="divider-h slower-fade-in"></div>
     <MapLibre

@@ -86,7 +86,7 @@
 
   nav {
     a {
-      @apply transform text-2xl underline transition-all duration-150 ease-in-out hover:scale-110 hover:no-underline focus:no-underline active:no-underline;
+      @apply transform text-lg underline transition-all duration-150 ease-in-out hover:scale-110 hover:no-underline focus:no-underline active:no-underline sm:text-2xl;
     }
   }
 }

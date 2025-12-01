@@ -4,9 +4,9 @@
   import HobbyLink from '$components/HobbyLink.svelte';
 </script>
 
-<main id="contact" class="bg-hobbies flex flex-col items-center gap-0">
+<main id="contact" class="bg-hobbies flex flex-col items-center gap-0 overflow-x-hidden">
   <div class="page-content">
-    <h1 class="fade-in text-7xl font-[960]">Hobbies</h1>
+    <h1 class="fade-in text-4xl font-[960] sm:text-5xl md:text-6xl lg:text-7xl">Hobbies</h1>
     <NavBar />
     <div class="divider-h slower-fade-in"></div>
 

@@ -12,9 +12,9 @@
   };
 </script>
 
-<main id="contact" class="bg-contact flex flex-col items-center gap-0">
+<main id="contact" class="bg-contact flex flex-col items-center gap-0 overflow-x-hidden">
   <div class="page-content">
-    <h1 class="fade-in text-7xl font-[960]">Contact</h1>
+    <h1 class="fade-in text-4xl font-[960] sm:text-5xl md:text-6xl lg:text-7xl">Contact</h1>
     <NavBar />
   </div>
   <div class="contact-links">
