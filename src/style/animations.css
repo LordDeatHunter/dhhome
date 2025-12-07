@@ -1,34 +1,33 @@
-@tailwind base;
-
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 1;
   }
 }
 
 @keyframes growIn {
-  0% {
+  from {
     transform: scale(0);
   }
-  100% {
+  to {
     transform: scale(1);
   }
 }
 
 @keyframes pulsateBackground {
-  0% {
+  from {
     background-size: 100% 100%;
   }
-  100% {
+  to {
     background-size: 120% 120%;
   }
 }
 
 @keyframes pulsateScale {
-  0% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -37,14 +36,40 @@
 }
 
 @keyframes rotate {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
-.animation-rotate {
-  animation: rotate 8s linear infinite;
+@layer base {
+  .animation-rotate {
+    animation: rotate 8s linear infinite;
+  }
+
+  .pulsate-scale {
+    animation: pulsateScale 1.5s ease-in-out infinite alternate;
+  }
+
+  .pulsate-background {
+    animation: pulsateBackground 2s ease-in-out infinite alternate;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.75s 1.25s ease-in-out both;
+  }
+
+  .faster-fade-in {
+    animation: fadeIn 0.5s ease-in-out both;
+  }
+
+  .slower-fade-in {
+    animation: fadeIn 0.5s 2s ease-in-out both;
+  }
+
+  .grow-in {
+    animation: growIn 0.75s 0.5s ease-in-out both;
+  }
 }

@@ -1,0 +1,95 @@
+@layer base {
+  .button {
+    @apply rounded-lg bg-[var(--txt-gray-1)] px-4 py-2 font-semibold uppercase shadow-lg transition-all duration-150 ease-in-out hover:bg-[var(--txt-crimson-faded)];
+    color: var(--txt-crimson);
+  }
+
+  .sort-button {
+    @apply cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold uppercase shadow-lg transition-all duration-300 ease-in-out;
+    border: 2px solid var(--txt-crimson);
+    color: var(--txt-crimson);
+  }
+
+  .sort-button:hover {
+    @apply scale-105;
+    background: var(--txt-crimson-faded);
+    color: var(--txt-crimson-lighter);
+  }
+
+  .sort-button.active {
+    background: var(--txt-crimson-faded);
+    color: var(--txt-crimson-lighter);
+  }
+
+  .search-input {
+    @apply w-[300px] rounded-lg px-4 py-2 text-sm font-semibold uppercase shadow-lg outline-none transition-all duration-300 ease-in-out;
+    background-color: var(--dark-2);
+    border: 2px solid var(--txt-crimson);
+    color: var(--txt-crimson);
+  }
+
+  .search-input:focus {
+    @apply scale-105 ring-2 ring-[var(--txt-crimson)] ring-opacity-50;
+    background-color: var(--dark-3);
+  }
+
+  .technology {
+    @apply rounded-full bg-[var(--txt-gray-1)] px-2 py-1 text-xs font-semibold tracking-wide text-white;
+  }
+
+  .technologies-button {
+    @apply flex flex-wrap items-center justify-center gap-2;
+    color: whitesmoke;
+  }
+
+  .divider-h {
+    @apply my-2 h-0.5 w-full;
+  }
+
+  .project-dialog {
+    @apply z-[2] m-auto h-fit w-[960px] p-0 outline-none;
+    background: none;
+  }
+
+  .project-dialog-content {
+    @apply flex transform flex-col items-center justify-center gap-6 rounded-lg bg-black bg-opacity-75 p-6 shadow-lg;
+    border: 1px solid var(--txt-crimson);
+  }
+
+  .project-dialog-content .description {
+    @apply break-words p-4;
+  }
+
+  .project-dialog-content .close-button {
+    @apply absolute right-0 top-0 pr-4 pt-4;
+    color: var(--txt-crimson);
+  }
+
+  .project-dialog-content .project-img-preview {
+    @apply hover:scale-125;
+  }
+
+  .project-dialog-content > h2 {
+    @apply text-4xl;
+    color: var(--txt-crimson);
+  }
+
+  .image-dialog {
+    @apply z-[2] m-auto h-fit max-w-[960px] p-0 outline-none;
+    background: none;
+  }
+
+  .image-dialog-content {
+    @apply flex max-h-[80vh] max-w-[80vh] transform items-center justify-center rounded-lg bg-black bg-opacity-75 p-6 shadow-lg;
+    border: 2px solid var(--txt-crimson);
+  }
+
+  .image-dialog-content img {
+    border-radius: 0.5rem;
+  }
+
+  .image-loading-box {
+    @apply inset-0 flex items-center justify-center p-6;
+    color: var(--txt-crimson);
+  }
+}

@@ -1,0 +1,284 @@
+@layer base {
+  .page-content {
+    @apply grow-in flex w-full flex-col items-center justify-center gap-4 px-4 pb-24 pt-12;
+  }
+
+  #home {
+    color: var(--txt-black);
+  }
+
+  #home .divider-h {
+    background-image: linear-gradient(90deg, #00000000, var(--txt-black), #00000000);
+  }
+
+  .bg-home {
+    @apply pulsate-background m-0 min-h-screen p-0 antialiased;
+    background: radial-gradient(
+        circle,
+        rgba(241, 50, 67, 1) 15%,
+        rgba(225, 12, 51, 1) 40%,
+        rgba(189, 14, 51, 1) 60%,
+        rgba(151, 20, 64, 1) 80%,
+        rgba(74, 13, 55, 1) 100%
+      )
+      center;
+  }
+
+  #projects,
+  #hobbies,
+  #contact {
+    color: var(--txt-crimson);
+  }
+
+  #projects p,
+  #hobbies p,
+  #contact p {
+    color: var(--txt-crimson-light);
+  }
+
+  #projects .divider-h,
+  #hobbies .divider-h,
+  #contact .divider-h {
+    background-image: linear-gradient(90deg, #00000000, var(--txt-crimson), #00000000);
+  }
+
+  #projects .divider-h-dark,
+  #hobbies .divider-h-dark,
+  #contact .divider-h-dark {
+    @apply divider-h;
+    background-image: linear-gradient(90deg, #00000000, var(--dark-2), #00000000);
+  }
+
+  #projects .divider-v,
+  #hobbies .divider-v,
+  #contact .divider-v {
+    background-image: linear-gradient(90deg, #00000000, var(--txt-crimson), #00000000);
+    width: 0.5rem;
+  }
+
+  .bg-projects,
+  .bg-hobbies,
+  .bg-contact {
+    @apply m-0 min-h-screen p-0 antialiased;
+    background: var(--dark-1);
+  }
+
+  .contact-links {
+    @apply slower-fade-in flex w-full max-w-[960px] flex-col gap-4 rounded-xl border-4 border-[var(--dark-2)] p-8 shadow-lg;
+  }
+
+  .contact-link {
+    @apply flex flex-col gap-4;
+  }
+
+  .contact-link .contact-main {
+    @apply flex items-center gap-4;
+  }
+
+  .contact-link .contact-action {
+    @apply flex w-fit transform cursor-pointer items-center gap-2 pl-14 transition-all duration-200 ease-in-out;
+    color: var(--txt-crimson-light);
+  }
+
+  .contact-link .contact-action:hover {
+    @apply origin-center scale-110;
+    color: var(--txt-crimson-lighter);
+  }
+
+  .project-container {
+    @apply flex flex-col gap-4 p-4;
+  }
+
+  .project-container > h2 {
+    @apply fade-in text-4xl font-[960];
+  }
+
+  .project-container > p {
+    @apply px-4;
+  }
+
+  .project-container > .project-cards > .project-card {
+    @apply rounded-lg p-4 shadow-lg;
+    background: var(--dark-2);
+  }
+
+  .project-container > .project-cards > .project-card:hover {
+    background: var(--dark-3);
+  }
+
+  .project-cards {
+    @apply grid grid-cols-1 gap-4 transition-all duration-300 ease-in-out md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .project-card {
+    @apply cursor-pointer transition-all duration-300 ease-in-out;
+    color: var(--txt-crimson-lighter);
+  }
+
+  .project-card:hover {
+    @apply scale-105;
+  }
+
+  .project-card:hover img {
+    @apply scale-110;
+  }
+
+  .project-card .title {
+    @apply text-center text-lg font-bold md:text-2xl;
+  }
+
+  .project-card .summary {
+    @apply text-sm md:text-lg;
+  }
+
+  .project-card .tech-stack {
+    @apply text-xs md:text-sm;
+  }
+
+  .project-card .links {
+    @apply text-sm;
+  }
+
+  .project-img-preview {
+    @apply full object-contain text-center transition-all duration-300 ease-in-out;
+    image-rendering: pixelated;
+  }
+
+  .project-overview {
+    @apply flex flex-col gap-3 p-4;
+    color: var(--txt-crimson-lighter);
+  }
+
+  .project-overview h2 {
+    @apply my-4 text-2xl font-bold;
+  }
+
+  .project-overview p {
+    @apply text-sm md:text-lg;
+  }
+
+  .project-overview a {
+    @apply cursor-pointer text-sm font-semibold underline transition-colors duration-200 ease-in-out md:text-lg;
+    color: var(--txt-crimson);
+  }
+
+  .project-overview a:hover {
+    color: var(--txt-crimson-lighter);
+  }
+
+  .project-overview pre {
+    @apply overflow-x-auto whitespace-pre-wrap break-words rounded-lg p-4 font-mono text-sm shadow-lg;
+    color: #cbccc6;
+    background-color: #303030;
+  }
+
+  .project-overview pre .hljs-keyword {
+    color: #0098db;
+  }
+
+  .project-overview pre .hljs-string {
+    color: #ff0546;
+  }
+
+  .project-overview pre .hljs-number {
+    color: #05ff69;
+  }
+
+  .project-overview pre .hljs-built_in {
+    color: #0ce6f2;
+  }
+
+  .project-overview ul {
+    @apply list-disc;
+  }
+
+  .project-overview ol {
+    @apply list-decimal;
+  }
+
+  .project-overview ul,
+  .project-overview ol {
+    @apply my-4 list-inside pl-4;
+  }
+
+  .project-overview li {
+    @apply my-2;
+  }
+
+  .project-overview img {
+    @apply my-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105;
+  }
+
+  .hobby-links {
+    @apply flex flex-wrap justify-center gap-16 px-12;
+  }
+
+  .hobby-link-anchor {
+    @apply h-full w-full;
+  }
+
+  .hobby-link {
+    @apply flex h-full max-w-[300px] flex-col items-center gap-2 rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out;
+    outline: 4px solid var(--txt-crimson);
+  }
+
+  .hobby-link h2.title {
+    @apply text-wrap text-center text-2xl font-bold;
+  }
+
+  .hobby-link p.summary {
+    @apply slower-fade-in text-center text-sm;
+  }
+
+  .hobby-link:hover {
+    @apply scale-105;
+  }
+
+  .hobby-link:hover img {
+    @apply scale-110;
+  }
+
+  .hobby-img-preview {
+    @apply full object-contain text-center transition-all duration-300 ease-in-out;
+    image-rendering: pixelated;
+  }
+
+  .bottlecaps {
+    @apply grid grid-cols-2 gap-4 transition-all duration-300 ease-in-out sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7;
+  }
+
+  .bottlecap {
+    @apply cursor-pointer py-4 transition-all duration-300 ease-in-out hover:scale-105;
+    color: var(--txt-crimson-lighter);
+  }
+
+  .bottlecap .title {
+    @apply text-center text-3xl;
+    font-family: Handjet, sans-serif !important;
+  }
+
+  .bottlecap .country {
+    @apply text-center;
+  }
+
+  .bottlecap img {
+    @apply transition-all duration-300 ease-in-out;
+    border: 0 solid var(--txt-crimson);
+    border-radius: 100%;
+  }
+
+  .bottlecap:hover img {
+    @apply animation-rotate;
+    border: 6px solid var(--txt-crimson);
+  }
+
+  .bottlecap-img-preview {
+    @apply full object-contain text-center transition-all duration-300 ease-in-out;
+    image-rendering: pixelated;
+  }
+
+  .maplibre-visited {
+    @apply mt-6 aspect-[4/5] h-auto w-[80%] min-w-[60vw] rounded-lg shadow-lg md:aspect-[16/9];
+    outline: 4px solid var(--txt-crimson);
+  }
+}
