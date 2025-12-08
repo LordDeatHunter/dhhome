@@ -50,31 +50,84 @@
 }
 
 .project-dialog {
-  @apply z-2 m-auto h-fit w-[960px] p-0 outline-hidden;
-  background: none;
+  @apply m-auto max-h-[95vh] w-[960px] max-w-[95vw] p-0;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  animation: slideUp 0.3s ease-out;
+  box-shadow:
+    0 0 40px rgba(241, 50, 67, 0.25),
+    0 0 80px rgba(241, 50, 67, 0.15),
+    0 12px 32px rgba(241, 50, 67, 0.2);
+}
+
+.project-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .project-dialog-content {
-  @apply flex transform flex-col items-center justify-center gap-6 rounded-lg bg-black/75 p-6 shadow-lg;
-  border: 1px solid var(--txt-crimson);
+  @apply relative flex flex-col items-center justify-center gap-6 rounded-2xl p-6;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
+  border: 2px solid var(--txt-crimson);
+  backdrop-filter: blur(10px);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
-.project-dialog-content .description {
-  @apply p-4 wrap-break-word;
+.project-dialog-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
+  opacity: 1;
+  pointer-events: none;
 }
 
-.project-dialog-content .close-button {
-  @apply absolute top-0 right-0 pt-4 pr-4;
+.project-dialog-close {
+  @apply absolute top-4 right-4 z-20 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--txt-crimson);
   color: var(--txt-crimson);
+}
+
+.project-dialog-close:hover {
+  @apply scale-110;
+  background: rgba(189, 14, 51, 0.3);
+  color: var(--txt-crimson-lighter);
+  box-shadow: 0 4px 12px rgba(241, 50, 67, 0.4);
+}
+
+.project-dialog-close:active {
+  @apply scale-95;
 }
 
 .project-dialog-content .project-img-preview {
-  @apply hover:scale-125;
+  @apply transition-all duration-300 ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+.project-dialog-content .project-img-preview:hover {
+  @apply scale-110;
 }
 
 .project-dialog-content > h2 {
-  @apply text-4xl;
+  @apply text-3xl font-bold sm:text-4xl;
   color: var(--txt-crimson);
+  position: relative;
+  z-index: 2;
+}
+
+.project-dialog-content .project-overview {
+  position: relative;
+  z-index: 2;
 }
 
 .image-modal-dialog {

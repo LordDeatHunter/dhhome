@@ -71,6 +71,13 @@
   background: var(--dark-1);
 }
 
+.bg-projects {
+  background-image: radial-gradient(circle at 25% 35%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 25%, rgba(189, 14, 51, 0.02) 0%, transparent 50%);
+  background-color: var(--dark-1);
+}
+
 .bg-contact {
   background-image: radial-gradient(circle at 20% 50%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
@@ -175,38 +182,80 @@
   @apply font-semibold;
 }
 
+.projects-container {
+  @apply w-full max-w-[1440px] px-4 pb-16;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .project-container {
-  @apply flex flex-col gap-4 p-4;
+  @apply relative flex flex-col gap-4 rounded-2xl p-6 shadow-2xl;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
+  border: 2px solid var(--dark-3);
+  backdrop-filter: blur(10px);
+}
+
+.project-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.project-container:hover::before {
+  opacity: 1;
 }
 
 .project-container > h2 {
-  @apply fade-in text-4xl font-[960];
+  @apply text-3xl font-[960] sm:text-4xl;
+  color: var(--txt-crimson);
 }
 
 .project-container > p {
-  @apply px-4;
+  @apply px-2;
+  color: var(--txt-crimson-light);
 }
 
-.project-container > .project-cards > .project-card {
-  @apply rounded-lg p-4 shadow-lg;
-  background: var(--dark-2);
+.project-container > button {
+  @apply cursor-pointer rounded-lg px-4 py-2 font-semibold transition-all duration-300 ease-in-out;
+  border: 2px solid var(--txt-crimson);
+  color: var(--txt-crimson);
+  background: rgba(189, 14, 51, 0.1);
 }
 
-.project-container > .project-cards > .project-card:hover {
-  background: var(--dark-3);
+.project-container > button:hover {
+  @apply scale-105;
+  background: rgba(241, 50, 67, 0.2);
+  color: var(--txt-crimson-lighter);
+  box-shadow: 0 4px 12px rgba(241, 50, 67, 0.3);
 }
 
 .project-cards {
-  @apply grid grid-cols-1 gap-4 transition-all duration-300 ease-in-out md:grid-cols-2 lg:grid-cols-3;
+  @apply grid grid-cols-2 gap-4 transition-all duration-300 ease-in-out md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
 }
 
 .project-card {
-  @apply cursor-pointer transition-all duration-300 ease-in-out;
+  @apply cursor-pointer rounded-2xl p-3 transition-all duration-300 ease-in-out;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(16, 16, 16, 0.8) 100%);
+  border: 2px solid var(--dark-3);
   color: var(--txt-crimson-lighter);
+  max-width: 280px;
+  justify-self: center;
 }
 
 .project-card:hover {
   @apply scale-105;
+  border-color: var(--txt-crimson);
+  background: linear-gradient(135deg, rgba(33, 33, 33, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+  box-shadow: 0 4px 16px rgba(241, 50, 67, 0.3);
 }
 
 .project-card:hover img {
@@ -214,11 +263,11 @@
 }
 
 .project-card .title {
-  @apply text-center text-lg font-bold md:text-2xl;
+  @apply text-center text-lg font-bold md:text-xl;
 }
 
 .project-card .summary {
-  @apply text-sm md:text-lg;
+  @apply text-xs md:text-sm;
 }
 
 .project-card .tech-stack {

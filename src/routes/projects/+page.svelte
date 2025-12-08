@@ -12,19 +12,21 @@
   let { data }: Props = $props();
 </script>
 
-<main id="projects" class="bg-projects flex flex-col items-center justify-center gap-0 overflow-x-hidden">
+<main
+  id="projects"
+  class="bg-projects flex flex-col items-center justify-center gap-0 overflow-x-hidden"
+>
   <div class="page-content">
     <h1 class="fade-in text-4xl font-[960] sm:text-5xl md:text-6xl lg:text-7xl">Projects</h1>
+    <p class="fade-in text-center text-lg opacity-80 sm:text-xl">
+      Different projects I've worked on throughout the years
+    </p>
     <NavBar />
-    <div class="divider-h slower-fade-in"></div>
-    <div class="slower-fade-in flex w-full max-w-[960px] flex-col gap-8">
-      {#each Object.values(data) as projectCategory, i}
-        <ProjectCategory {projectCategory} />
-        {#if i !== Object.values(data).length - 1}
-          <div class="divider-h slower-fade-in"></div>
-        {/if}
-      {/each}
-    </div>
+  </div>
+  <div class="projects-container">
+    {#each Object.values(data) as projectCategory, i}
+      <ProjectCategory {projectCategory} />
+    {/each}
   </div>
   <ProjectModal />
 </main>
