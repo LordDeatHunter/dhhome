@@ -62,8 +62,21 @@
 
   nav a {
     @apply text-lg transition-all duration-300 ease-in-out sm:text-2xl;
-    border-bottom: 2px solid currentColor;
     text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-image: linear-gradient(90deg, transparent, currentColor, transparent);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
   }
 
   nav a[aria-current='page'] {
@@ -82,22 +95,33 @@
     text-shadow: 0 4px 12px rgba(241, 50, 67, 0.5);
   }
 
+  nav a:hover::after,
+  nav a:focus::after,
+  nav a.force-hover::after {
+    opacity: 0;
+  }
+
   #home nav a {
     color: var(--txt-black);
-    border-bottom-color: var(--txt-black);
+  }
+
+  #home nav a::after {
+    background-image: linear-gradient(90deg, transparent, var(--txt-black), transparent);
   }
 
   #home nav a[aria-current='page'] {
     color: var(--txt-black);
-    border-bottom-color: var(--txt-black);
     text-shadow: 0 0 6px rgba(12, 12, 31, 0.3);
     font-weight: bold;
   }
 
+  #home nav a[aria-current='page']::after {
+    background-image: linear-gradient(90deg, transparent, var(--txt-black), transparent);
+  }
+
   #home nav a:hover,
   #home nav a:focus,
-  #home nav a:active {
-    border-bottom-color: transparent;
+  #home nav a.force-hover {
     transform: translateY(-4px) scale(1.05);
     filter: brightness(0.7);
     text-shadow: 0 4px 8px rgba(12, 12, 31, 0.25);
