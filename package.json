@@ -29,7 +29,7 @@
     "eslint-plugin-svelte": "^2.45.1",
     "globals": "^15.0.0",
     "highlight.js": "^11.10.0",
-    "maplibre-gl": "^5.0.1",
+    "maplibre-gl": "^5.14.0",
     "marked": "^14.1.2",
     "marked-highlight": "^2.1.4",
     "postcss": "^8.4.41",
@@ -50,7 +50,7 @@
     "@tailwindcss/vite": "^4.1.17",
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
-    "svelte-maplibre-gl": "^0.1.1",
+    "svelte-maplibre-gl": "^1.0.2",
     "transliteration": "^2.3.5"
   }
 }

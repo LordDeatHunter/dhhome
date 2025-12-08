@@ -374,33 +374,101 @@
   image-rendering: pixelated;
 }
 
+.hobby-subpage-container {
+  @apply w-full max-w-[1440px] px-4 pb-16;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.map-container {
+  @apply flex w-full justify-center;
+}
+
+.controls-container {
+  @apply flex flex-col items-center gap-4;
+}
+
+.info-container {
+  @apply flex flex-col gap-3 rounded-2xl p-6 shadow-2xl;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
+  border: 2px solid var(--dark-3);
+  backdrop-filter: blur(10px);
+  color: var(--txt-crimson-light);
+}
+
+.info-container h3,
+.info-container h4 {
+  color: var(--txt-crimson);
+}
+
+.info-container .info-link {
+  @apply font-semibold underline transition-colors duration-200 ease-in-out;
+  color: var(--txt-crimson-lighter);
+}
+
+.info-container .info-link:hover {
+  color: var(--txt-crimson-light);
+}
+
+.bottlecaps-container {
+  @apply flex w-full justify-center;
+}
+
 .bottlecaps {
   @apply grid grid-cols-2 gap-4 transition-all duration-300 ease-in-out sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7;
 }
 
 .bottlecap {
-  @apply cursor-pointer py-4 transition-all duration-300 ease-in-out hover:scale-105;
+  @apply cursor-pointer rounded-2xl p-4 transition-all duration-300 ease-in-out;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(16, 16, 16, 0.8) 100%);
+  border: 2px solid var(--dark-3);
   color: var(--txt-crimson-lighter);
 }
 
+.bottlecap:hover {
+  @apply scale-105;
+  border-color: var(--txt-crimson);
+  background: linear-gradient(135deg, rgba(33, 33, 33, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+  box-shadow: 0 4px 16px rgba(241, 50, 67, 0.3);
+}
+
 .bottlecap .title {
-  @apply text-center text-3xl;
+  @apply text-center text-3xl transition-colors duration-300 ease-in-out;
   font-family: Handjet, sans-serif !important;
+  color: var(--txt-crimson);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.bottlecap:hover .title {
+  color: var(--txt-crimson-lighter);
 }
 
 .bottlecap .country {
-  @apply text-center;
+  @apply text-center transition-colors duration-300 ease-in-out;
+  color: var(--txt-crimson-light);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.bottlecap:hover .country {
+  color: var(--txt-crimson-lighter);
 }
 
 .bottlecap img {
   @apply transition-all duration-300 ease-in-out;
-  border: 0 solid var(--txt-crimson);
+  border: 3px solid var(--dark-3);
   border-radius: 100%;
 }
 
 .bottlecap:hover img {
   @apply animation-rotate;
-  border: 6px solid var(--txt-crimson);
+  border: 4px solid var(--txt-crimson);
+  filter: drop-shadow(0 4px 12px rgba(241, 50, 67, 0.5));
 }
 
 .bottlecap-img-preview {
@@ -409,6 +477,13 @@
 }
 
 .maplibre-visited {
-  @apply mt-6 aspect-4/5 h-auto w-[80%] min-w-[60vw] rounded-lg shadow-lg md:aspect-video;
-  outline: 4px solid var(--txt-crimson);
+  @apply aspect-4/5 h-auto w-[90%] min-w-[60vw] rounded-2xl shadow-2xl md:aspect-video;
+  border: 2px solid var(--dark-3);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.maplibre-visited:hover {
+  border-color: var(--txt-crimson);
+  box-shadow: 0 8px 24px rgba(241, 50, 67, 0.2);
 }

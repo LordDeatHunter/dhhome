@@ -77,21 +77,57 @@
   color: var(--txt-crimson);
 }
 
-.image-dialog {
-  @apply z-2 m-auto h-fit max-w-[960px] p-0 outline-hidden;
-  background: none;
+.image-modal-dialog {
+  @apply m-auto max-h-[95vh] max-w-[95vw] p-0;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
-.image-dialog-content {
-  @apply flex max-h-[80vh] max-w-[80vh] transform items-center justify-center rounded-lg bg-black/75 p-6 shadow-lg;
+.image-modal-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.image-modal-content {
+  @apply relative flex items-center justify-center rounded-2xl p-6 shadow-2xl;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.98) 0%, rgba(16, 16, 16, 0.98) 100%);
   border: 2px solid var(--txt-crimson);
+  max-height: 90vh;
+  max-width: 90vw;
+  animation: slideUp 0.3s ease-out;
 }
 
-.image-dialog-content img {
-  border-radius: 0.5rem;
+.image-modal-close {
+  @apply absolute top-4 right-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--txt-crimson);
+  color: var(--txt-crimson);
+}
+
+.image-modal-close:hover {
+  @apply scale-110;
+  background: rgba(189, 14, 51, 0.3);
+  color: var(--txt-crimson-lighter);
+  box-shadow: 0 4px 12px rgba(241, 50, 67, 0.4);
+}
+
+.image-modal-close:active {
+  @apply scale-95;
+}
+
+.image-modal-img {
+  @apply rounded-lg;
+  max-height: 80vh;
+  max-width: 80vw;
+  object-fit: contain;
+  image-rendering: auto;
 }
 
 .image-loading-box {
-  @apply inset-0 flex items-center justify-center p-6;
+  @apply flex flex-col items-center justify-center p-12;
   color: var(--txt-crimson);
+  min-width: 200px;
+  min-height: 200px;
 }

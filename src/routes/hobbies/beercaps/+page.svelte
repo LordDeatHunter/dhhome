@@ -1,9 +1,8 @@
 <script lang="ts">
   import '$style/style.css';
   import NavBar from '$components/NavBar.svelte';
-  import type { Bottlecaps } from '$lib/types';
+  import type { Bottlecap as BottlecapType, Bottlecaps } from '$lib/types';
   import Bottlecap from '$components/Bottlecap.svelte';
-  import type { Bottlecap as BottlecapType } from '$lib/types';
   import ImageModal from '$components/ImageModal.svelte';
   import { FeatureState, FillLayer, GeoJSONSource, LineLayer, MapLibre } from 'svelte-maplibre-gl';
   import { transliterate } from 'transliteration';
@@ -58,69 +57,86 @@
 
 <main id="hobbies" class="bg-hobbies flex flex-col items-center gap-0 overflow-x-hidden">
   <div class="page-content">
-    <h1 class="fade-in text-center text-2xl font-[960] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl">Hobbies - Beer Bottlecap Collection</h1>
-    <NavBar />
-    <div class="divider-h slower-fade-in"></div>
-    <MapLibre
-      class="maplibre-visited"
-      style="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
-      zoom={3.5}
-      center={{ lng: 16, lat: 45 }}
-      attributionControl={false}
+    <h1
+      class="fade-in text-center text-2xl font-[960] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl"
     >
-      <GeoJSONSource data={data.map}>
-        <FillLayer
-          paint={{
-            'fill-color': ['get', 'color'],
-            'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.4, 0.1]
-          }}
-          onmousemove={(ev) => (hoveredId = ev.features?.[0]?.id)}
-          onmouseleave={() => (hoveredId = undefined)}
-        />
-        <LineLayer
-          paint={{
-            'line-color': ['get', 'color'],
-            'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0.3],
-            'line-width': 1
-          }}
-        />
-        {#if hoveredId}
-          <FeatureState id={hoveredId} state={{ hover: true }} />
-        {/if}
-      </GeoJSONSource>
-    </MapLibre>
-    <input
-      type="text"
-      placeholder="Search bottlecaps..."
-      class="search-input slower-fade-in mt-8"
-      bind:value={search}
-    />
-    <div class="mb-8 flex justify-center gap-4">
-      <button
-        class={`sort-button ${sortBy === 'name' ? 'active' : ''}`}
-        onclick={() => (sortBy = 'name')}
+      Beer Bottlecap Collection
+    </h1>
+    <p class="fade-in text-center text-lg opacity-80 sm:text-xl">
+      My collection of beer bottlecaps from around the world
+    </p>
+    <NavBar />
+  </div>
+
+  <div class="hobby-subpage-container">
+    <div class="slide-up map-container" style="animation-delay: 0.1s;">
+      <MapLibre
+        class="maplibre-visited"
+        style="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+        zoom={3.5}
+        center={{ lng: 16, lat: 45 }}
+        attributionControl={false}
       >
-        {sortBy === 'name' ? 'Sorted by Name' : 'Sort by Name'}
-      </button>
-      <button
-        class={`sort-button ${sortBy === 'country' ? 'active' : ''}`}
-        onclick={() => (sortBy = 'country')}
-      >
-        {sortBy === 'country' ? 'Sorted by Country' : 'Sort by Country'}
-      </button>
+        <GeoJSONSource data={data.map}>
+          <FillLayer
+            paint={{
+              'fill-color': ['get', 'color'],
+              'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.4, 0.1]
+            }}
+            onmousemove={(ev) => (hoveredId = ev.features?.[0]?.id)}
+            onmouseleave={() => (hoveredId = undefined)}
+          />
+          <LineLayer
+            paint={{
+              'line-color': ['get', 'color'],
+              'line-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 1, 0.3],
+              'line-width': 1
+            }}
+          />
+          {#if hoveredId}
+            <FeatureState id={hoveredId} state={{ hover: true }} />
+          {/if}
+        </GeoJSONSource>
+      </MapLibre>
     </div>
-    <h4 class="slower-fade-in text-crimson-lighter text-center text-xl font-[960]">
-      All the cap images are taken by myself from my collection.<br />
-      The cap data is fetched from
-      <a href="https://crowncaps.info/" target="_blank" class="text-crimson-light hover:underline"
-        >CrownCaps</a
-      > and might not be fully accurate.
-    </h4>
-    <h3 class="slower-fade-in text-center text-3xl font-[960]">Last updated: 30th of June, 2025</h3>
-    <h3 class="slower-fade-in text-center text-3xl font-[960]">
-      Showing {sortedBottlecaps.length} / {Object.keys(data.caps).length} bottlecaps.
-    </h3>
-    <div class="slower-fade-in flex max-w-[1440px] flex-col justify-center gap-8 px-8">
+
+    <div class="slide-up controls-container" style="animation-delay: 0.2s;">
+      <input
+        type="text"
+        placeholder="Search bottlecaps..."
+        class="search-input"
+        bind:value={search}
+      />
+      <div class="flex justify-center gap-4">
+        <button
+          class={`sort-button ${sortBy === 'name' ? 'active' : ''}`}
+          onclick={() => (sortBy = 'name')}
+        >
+          {sortBy === 'name' ? 'Sorted by Name' : 'Sort by Name'}
+        </button>
+        <button
+          class={`sort-button ${sortBy === 'country' ? 'active' : ''}`}
+          onclick={() => (sortBy = 'country')}
+        >
+          {sortBy === 'country' ? 'Sorted by Country' : 'Sort by Country'}
+        </button>
+      </div>
+    </div>
+
+    <div class="slide-up info-container" style="animation-delay: 0.3s;">
+      <h4 class="text-center text-base sm:text-lg">
+        All the cap images are taken by myself from my collection.<br />
+        The cap data is fetched from
+        <a href="https://crowncaps.info/" target="_blank" class="info-link">CrownCaps</a> and might not
+        be fully accurate.
+      </h4>
+      <h3 class="text-center text-xl font-[960] sm:text-2xl">Last updated: 30th of June, 2025</h3>
+      <h3 class="text-center text-xl font-[960] sm:text-2xl">
+        Showing {sortedBottlecaps.length} / {Object.keys(data.caps).length} bottlecaps.
+      </h3>
+    </div>
+
+    <div class="slide-up bottlecaps-container" style="animation-delay: 0.4s;">
       <div class="bottlecaps">
         {#each sortedBottlecaps as bottlecap}
           <Bottlecap {bottlecap} />
