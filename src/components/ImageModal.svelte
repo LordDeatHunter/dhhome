@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { selectedImage, selectedProject } from '$lib/stores';
+  import { selectedImage } from '$lib/stores';
   import Icon from '@iconify/svelte';
 
   let dialog = $state<HTMLDialogElement>();
@@ -40,6 +40,6 @@
   </div>
 </dialog>
 <div
-  class="fixed inset-0 z-10 bg-black bg-opacity-50 backdrop-blur-[2px] transition-opacity duration-300 ease-in-out"
+  class="fixed inset-0 z-10 bg-black/50 backdrop-blur-[2px] transition-opacity duration-300 ease-in-out"
   style="display: {$selectedImage ? 'block' : 'none'}"
 ></div>

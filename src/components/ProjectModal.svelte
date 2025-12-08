@@ -50,6 +50,6 @@
   </div>
 </dialog>
 <div
-  class="fixed inset-0 z-10 bg-black bg-opacity-50 backdrop-blur-[2px] transition-opacity duration-300 ease-in-out"
+  class="fixed inset-0 z-10 bg-black/50 backdrop-blur-[2px] transition-opacity duration-300 ease-in-out"
   style="display: {$selectedProject ? 'block' : 'none'}"
 ></div>

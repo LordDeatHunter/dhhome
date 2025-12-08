@@ -1,5 +1,4 @@
-@import 'app.css';
-@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap');
+@import './app.css';
 
 .handjet {
   font-family: 'Handjet', serif;

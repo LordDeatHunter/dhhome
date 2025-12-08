@@ -1,15 +1,36 @@
-@import 'variables.css';
-@import 'animations.css';
-@import 'components.css';
-@import 'pages.css';
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@500&display=swap');
+@import './variables.css' layer(base);
+@import './animations.css';
+@import './components.css';
+@import './pages.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @font-face {
   font-family: OCRAEXT;
   src: url('/OCRAEXT.TTF');
+}
+
+@utility full {
+  @apply h-full w-full;
 }
 
 @layer base {
@@ -33,10 +54,6 @@
   }
   .text-crimson-light {
     color: var(--txt-crimson-light);
-  }
-
-  .full {
-    @apply h-full w-full;
   }
 
   #app {
