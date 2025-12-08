@@ -1,6 +1,6 @@
 <script lang="ts">
   import '$style/style.css';
-  import NavBar from '$components/NavBar.svelte';
+  import PageHeader from '$components/PageHeader.svelte';
   import { FillLayer, LineLayer, MapLibre, GeoJSONSource, FeatureState } from 'svelte-maplibre-gl';
 
   interface Props {
@@ -13,17 +13,7 @@
 </script>
 
 <main id="hobbies" class="bg-hobbies flex flex-col items-center gap-0 overflow-x-hidden">
-  <div class="page-content">
-    <h1
-      class="fade-in text-center text-2xl font-[960] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl"
-    >
-      Travel Map
-    </h1>
-    <p class="fade-in text-center text-lg opacity-80 sm:text-xl">
-      Countries I've visited around the world
-    </p>
-    <NavBar />
-  </div>
+  <PageHeader title="Travel Map" subtitle="Countries I've visited around the world" />
 
   <div class="hobby-subpage-container">
     <div class="slide-up map-container" style="animation-delay: 0.1s;">

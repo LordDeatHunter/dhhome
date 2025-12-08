@@ -1,6 +1,6 @@
 <script lang="ts">
   import '$style/style.css';
-  import NavBar from '$components/NavBar.svelte';
+  import PageHeader from '$components/PageHeader.svelte';
   import ContactLink from '$components/ContactLink.svelte';
 
   let copied = $state(false);
@@ -13,13 +13,7 @@
 </script>
 
 <main id="contact" class="bg-contact flex flex-col items-center gap-0 overflow-x-hidden">
-  <div class="page-content">
-    <h1 class="fade-in text-4xl font-[960] sm:text-5xl md:text-6xl lg:text-7xl">Contact</h1>
-    <p class="fade-in text-center text-lg opacity-80 sm:text-xl">
-      Platforms where I roam around on.
-    </p>
-    <NavBar />
-  </div>
+  <PageHeader title="Contact" subtitle="Platforms where I roam around on." />
   <div class="contact-links-container">
     <div class="contact-links">
       <ContactLink
