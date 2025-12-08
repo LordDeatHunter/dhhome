@@ -82,6 +82,12 @@
   background: transparent;
   border: none;
   outline: none;
+  border-radius: 1rem;
+  animation: slideUp 0.3s ease-out;
+  box-shadow:
+    0 0 40px rgba(241, 50, 67, 0.25),
+    0 0 80px rgba(241, 50, 67, 0.15),
+    0 12px 32px rgba(241, 50, 67, 0.2);
 }
 
 .image-modal-dialog::backdrop {
@@ -91,16 +97,29 @@
 }
 
 .image-modal-content {
-  @apply relative flex items-center justify-center rounded-2xl p-6 shadow-2xl;
-  background: linear-gradient(135deg, rgba(26, 26, 26, 0.98) 0%, rgba(16, 16, 16, 0.98) 100%);
+  @apply relative flex items-center justify-center rounded-2xl p-6;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
   border: 2px solid var(--txt-crimson);
+  backdrop-filter: blur(10px);
   max-height: 90vh;
   max-width: 90vw;
-  animation: slideUp 0.3s ease-out;
+}
+
+.image-modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
+  opacity: 1;
+  pointer-events: none;
 }
 
 .image-modal-close {
-  @apply absolute top-4 right-4 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out;
+  @apply absolute top-4 right-4 z-20 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out;
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid var(--txt-crimson);
   color: var(--txt-crimson);
@@ -123,6 +142,8 @@
   max-width: 80vw;
   object-fit: contain;
   image-rendering: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .image-loading-box {
@@ -130,4 +151,6 @@
   color: var(--txt-crimson);
   min-width: 200px;
   min-height: 200px;
+  position: relative;
+  z-index: 2;
 }
