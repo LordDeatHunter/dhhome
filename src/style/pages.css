@@ -45,7 +45,16 @@
 #hobbies .divider-h-dark,
 #contact .divider-h-dark {
   @apply divider-h;
-  background-image: linear-gradient(90deg, #00000000, var(--dark-2), #00000000);
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(241, 50, 67, 0.15) 25%,
+    rgba(241, 50, 67, 0.3) 50%,
+    rgba(241, 50, 67, 0.15) 75%,
+    transparent 100%
+  );
+  height: 1px;
+  box-shadow: 0 0 8px rgba(241, 50, 67, 0.2);
 }
 
 #projects .divider-v,
@@ -62,26 +71,101 @@
   background: var(--dark-1);
 }
 
+.bg-contact {
+  background-image: radial-gradient(circle at 20% 50%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(189, 14, 51, 0.02) 0%, transparent 50%);
+  background-color: var(--dark-1);
+}
+
+.contact-links-container {
+  @apply w-full max-w-[1000px] px-4 pb-16;
+}
+
 .contact-links {
-  @apply slower-fade-in flex w-full max-w-[960px] flex-col gap-4 rounded-xl border-4 border-(--dark-2) p-8 shadow-lg;
+  @apply flex flex-col gap-0 overflow-hidden rounded-2xl shadow-2xl;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
+  border: 2px solid var(--dark-3);
+  backdrop-filter: blur(10px);
 }
 
 .contact-link {
-  @apply flex flex-col gap-4;
+  @apply relative flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-8;
+  background: transparent;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(241, 50, 67, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.contact-link:hover::before {
+  opacity: 1;
+}
+
+.contact-link:hover {
+  background: rgba(33, 33, 33, 0.6);
 }
 
 .contact-link .contact-main {
   @apply flex items-center gap-4;
 }
 
+.contact-link .contact-icon {
+  @apply flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 ease-in-out sm:h-14 sm:w-14;
+  background: linear-gradient(135deg, var(--txt-crimson) 0%, var(--txt-crimson-lighter) 100%);
+  box-shadow: 0 4px 12px rgba(241, 50, 67, 0.3);
+  color: black;
+}
+
+.contact-link:hover .contact-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(241, 50, 67, 0.5);
+}
+
+.contact-link .contact-text {
+  @apply transition-all duration-300 ease-in-out;
+  color: var(--txt-crimson);
+}
+
+.contact-link:hover .contact-text {
+  color: var(--txt-crimson-lighter);
+  transform: translateX(4px);
+}
+
 .contact-link .contact-action {
-  @apply flex w-fit transform cursor-pointer items-center gap-2 pl-14 transition-all duration-200 ease-in-out;
+  @apply flex w-fit transform cursor-pointer items-center gap-2 rounded-lg px-4 py-2 transition-all duration-300 ease-in-out sm:ml-auto;
   color: var(--txt-crimson-light);
+  border: 2px solid var(--txt-crimson);
+  background: rgba(189, 14, 51, 0.1);
 }
 
 .contact-link .contact-action:hover {
-  @apply origin-center scale-110;
+  @apply scale-105;
   color: var(--txt-crimson-lighter);
+  background: rgba(241, 50, 67, 0.2);
+  box-shadow: 0 4px 12px rgba(241, 50, 67, 0.3);
+}
+
+.contact-link .contact-action:active {
+  @apply scale-95;
+}
+
+.contact-link .contact-action:focus-visible {
+  outline: 2px solid var(--txt-crimson-lighter);
+  outline-offset: 2px;
+}
+
+.contact-link .contact-action-text {
+  @apply font-semibold;
 }
 
 .project-container {
