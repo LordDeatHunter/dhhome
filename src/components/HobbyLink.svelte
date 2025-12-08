@@ -4,14 +4,15 @@
     imgSrc: string;
     title: string;
     summary: string;
+    animationDelay?: string;
   }
 
-  let { href, imgSrc, title, summary }: Props = $props();
+  let { href, imgSrc, title, summary, animationDelay }: Props = $props();
 </script>
 
-<a {href}>
+<a {href} class="slide-up" style="animation-delay: {animationDelay ? animationDelay : '0s'};">
   <div class="hobby-link">
-    <div class="flex h-40 w-40 items-center justify-center">
+    <div class="hobby-img-container flex h-40 w-40 items-center justify-center">
       <img
         src={imgSrc}
         alt={title}
@@ -20,7 +21,6 @@
         height="160"
       />
     </div>
-    <div class="divider-h"></div>
     <div class="flex flex-col items-center justify-center gap-2">
       <h2 class="title">{title}</h2>
       <p class="summary">{summary}</p>
