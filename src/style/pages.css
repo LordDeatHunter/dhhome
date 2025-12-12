@@ -6,7 +6,8 @@
   color: var(--txt-black);
 }
 
-#home .divider-h {
+#home .divider-h,
+#error .divider-h {
   background-image: linear-gradient(90deg, #00000000, var(--txt-black), #00000000);
 }
 
