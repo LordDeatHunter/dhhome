@@ -69,12 +69,13 @@
 }
 
 .project-dialog-content {
-  @apply relative flex flex-col items-center justify-center gap-6 rounded-2xl p-6;
+  @apply relative flex flex-col items-center justify-start gap-6 rounded-2xl p-6;
   background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
   border: 2px solid var(--txt-crimson);
   backdrop-filter: blur(10px);
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .project-dialog-content::before {
