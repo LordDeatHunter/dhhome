@@ -28,6 +28,7 @@
         imgSrc="/assets/hobbies/airplane-autopilot.png"
         title="Letterboxd Profile"
         summary="My list of movies I've watched, and plan to watch."
+        external
       />
       <HobbyLink
         animationDelay="0.5s"
@@ -35,6 +36,7 @@
         imgSrc="/assets/hobbies/godgf.png"
         title="MyAnimeList Profile"
         summary="My list of anime and manga I've watched, read, or plan to."
+        external
       />
       <HobbyLink
         animationDelay="0.6s"
@@ -42,6 +44,7 @@
         imgSrc="/assets/hobbies/steam-logo.svg"
         title="Steam Profile"
         summary="Gamin' 😎🎮"
+        external
       />
     </div>
   </div>

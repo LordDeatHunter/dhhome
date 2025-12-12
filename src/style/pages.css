@@ -362,10 +362,20 @@
 }
 
 .hobby-link {
-  @apply relative flex h-full max-w-[300px] flex-col items-center gap-4 rounded-2xl p-6 shadow-2xl transition-all duration-300 ease-in-out;
+  @apply relative flex h-full w-[300px] flex-col items-center gap-4 rounded-2xl p-6 shadow-2xl transition-all duration-300 ease-in-out;
   background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
   border: 2px solid var(--dark-3);
   backdrop-filter: blur(10px);
+}
+
+.hobby-external-icon {
+  @apply absolute top-2 right-2 z-10 transition-all duration-300 ease-in-out;
+  color: var(--txt-crimson);
+}
+
+.hobby-link:hover .hobby-external-icon {
+  color: var(--txt-crimson-lighter);
+  transform: scale(1.1);
 }
 
 .hobby-link::before {
