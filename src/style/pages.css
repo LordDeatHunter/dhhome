@@ -349,6 +349,9 @@
   @apply my-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105;
   max-width: 100%;
   height: auto;
+  min-height: 200px;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
+  border: 2px solid var(--txt-crimson);
 }
 
 .hobby-links-container {
