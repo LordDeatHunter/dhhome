@@ -35,9 +35,13 @@ function markMap(map, markedCountries) {
 
     feature.id = index;
 
-    const { name_long: countryName } = properties;
+    const { name_long: longName, name, admin: administrativeName } = properties;
 
-    if (markedCountries.has(countryName)) {
+    if (
+      markedCountries.has(longName) ||
+      markedCountries.has(name) ||
+      markedCountries.has(administrativeName)
+    ) {
       properties.color = '#00AE00';
     } else {
       properties.color = '#AE0000';
