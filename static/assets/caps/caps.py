@@ -5,6 +5,10 @@ from PIL import Image
 
 BASE_URL = 'https://crowncaps.info/data/catalog/caps/'
 
+COUNTRY_NAME_OVERRIDES = {
+    'Korea (South)': 'South Korea'
+}
+
 
 def fetch_cap(cap_id):
     response = requests.get(f'{BASE_URL}{cap_id}')
@@ -76,10 +80,13 @@ def clean_data():
     caps = {}
 
     for cap_id, cap in caps_fetched.items():
+        country_name = cap['country']['name'] if 'country' in cap else ''
+        country_name = COUNTRY_NAME_OVERRIDES.get(country_name, country_name)
+
         caps[cap_id] = {
             "id": cap_id.split('-')[0],
             "internalId": cap_id,
-            'country': cap['country']['name'] if 'country' in cap else '',
+            'country': country_name,
             # 'description': cap['description'].replace('\n', ' ') if 'description' in cap else '',
             # 'info': cap['info'] if 'info' in cap else '',
             'name': get_cap_name(cap),
