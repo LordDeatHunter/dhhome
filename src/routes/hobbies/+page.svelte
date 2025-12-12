@@ -16,11 +16,32 @@
         summary="My collection of beer bottlecaps."
       />
       <HobbyLink
-        animationDelay="0.4s"
+        animationDelay="0.3s"
         href="hobbies/travelmap"
         imgSrc="/assets/hobbies/europe-blue.svg"
         title="Travel Map"
         summary="A map of the countries I've visited."
+      />
+      <HobbyLink
+        animationDelay="0.4s"
+        href="https://letterboxd.com/deathunter/"
+        imgSrc="/assets/hobbies/airplane-autopilot.png"
+        title="Letterboxd Profile"
+        summary="My list of movies I've watched, and plan to watch."
+      />
+      <HobbyLink
+        animationDelay="0.5s"
+        href="https://myanimelist.net/profile/DeatHunter"
+        imgSrc="/assets/hobbies/godgf.png"
+        title="MyAnimeList Profile"
+        summary="My list of anime and manga I've watched, read, or plan to."
+      />
+      <HobbyLink
+        animationDelay="0.6s"
+        href="https://steamcommunity.com/id/LordDeatHunter/"
+        imgSrc="/assets/hobbies/steam-logo.svg"
+        title="Steam Profile"
+        summary="Gamin' 😎🎮"
       />
     </div>
   </div>
