@@ -123,7 +123,9 @@
         <a href="https://crowncaps.info/" target="_blank" class="info-link">CrownCaps</a> and might not
         be fully accurate.
       </h4>
-      <h3 class="text-center text-xl font-[960] sm:text-2xl">Last updated: 30th of June, 2025</h3>
+      <h3 class="text-center text-xl font-[960] sm:text-2xl">
+        Last updated: 12th of December, 2025
+      </h3>
       <h3 class="text-center text-xl font-[960] sm:text-2xl">
         Showing {sortedBottlecaps.length} / {Object.keys(data.caps).length} bottlecaps.
       </h3>
