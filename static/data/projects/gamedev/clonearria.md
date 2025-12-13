@@ -19,7 +19,7 @@ in [Love2D](https://love2d.org/) (Lua), and had features such as:
 - Inventory and crafting system
 - Chat (in singleplayer) with commands
 
-![clonearria-v1.png](assets/projects/clonearria-v1.png)
+![clonearria-v1.png](/assets/projects/clonearria-v1.png)
 
 ## MonoGame (C#)
 
@@ -33,4 +33,4 @@ This version didn't have all the features as the Love2D one, but I improved the 
 experimented a lot more with worldgen, for things such as different stone "biomes" with different ores, attempt at
 generating custom tree shapes, and so on.
 
-![clonearria-v2.png](assets/projects/clonearria-v2.png)
+![clonearria-v2.png](/assets/projects/clonearria-v2.png)

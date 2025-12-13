@@ -50,8 +50,12 @@ projectCategoriesFiles.forEach((file) => {
     const { data, content } = matter(fileContent);
     const htmlContent = marked.parse(content);
 
+    const projectId = path.basename(file, '.md');
+
     const project = {
       ...data,
+      id: projectId,
+      category: type,
       technologies: data.technologies.sort(),
       description: htmlContent
     };

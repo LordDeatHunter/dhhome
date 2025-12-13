@@ -9,12 +9,12 @@ This was the first ever project I started in OpenGL (using [LWJGL](https://www.l
 After experimenting with different graphics frameworks and making Terraria clone(s), I decided to extend to 3D by making
 a Minecraft clone.
 
-![voxelite-1.png](assets/projects/voxelite-1.png)
+![voxelite-1.png](/assets/projects/voxelite-1.png)
 
 The project didn't really get far, most I did was a simple multithreaded terrain generation, player movement, block
 breaking/placing, and structure (tree) generation.
 
-![voxelite-2.png](assets/projects/voxelite-2.png)
+![voxelite-2.png](/assets/projects/voxelite-2.png)
 
 This was one of the first "big" projects I did. I didn't get far with development, but it was still a valuable
 learning experience.

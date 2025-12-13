@@ -16,6 +16,8 @@ export const Technologies = {
 } as const;
 
 export interface Project {
+  id: string;
+  category: string;
   title: string;
   summary: string;
   description?: string;

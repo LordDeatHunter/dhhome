@@ -1,21 +1,25 @@
 <script lang="ts">
-  import { selectedProject } from '$lib/stores';
   import type { Project } from '$lib/types';
   import ExternalLink from '$components/ExternalLink.svelte';
   import Technologies from '$components/Technologies.svelte';
+  import { goto } from '$app/navigation';
 
   interface Props {
     project: Project;
   }
 
   let { project }: Props = $props();
+
+  const handleClick = (e: MouseEvent) => {
+    if ((e.target as HTMLElement).closest('a')) {
+      return;
+    }
+    goto(`/projects/${project.id}`);
+  };
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-<div
-  class="project-card flex flex-col items-center justify-between gap-4"
-  onclick={() => selectedProject.set(project)}
->
+<div class="project-card flex flex-col items-center justify-between gap-4" onclick={handleClick}>
   <div class="flex flex-col justify-between gap-2">
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="mt-2 flex h-32 w-32 items-center justify-center">

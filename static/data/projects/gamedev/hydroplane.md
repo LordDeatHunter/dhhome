@@ -11,11 +11,11 @@ submarine, and one geyser) work together to protect the ocean floor from toxic b
 
 This game earned us **1st place** in the Game Jam.
 
-![hydroplane-1.png](assets/projects/hydroplane-1.png)
+![hydroplane-1.png](/assets/projects/hydroplane-1.png)
 
 The GGJ version can be found [here](https://lorddeathunter.itch.io/hydroplane).
 
 After the game jam, we continued to work on it, adding more content and features, and eventually releasing it on Steam.
 
-![hydroplane-2.png](assets/projects/hydroplane-2.png)
+![hydroplane-2.png](/assets/projects/hydroplane-2.png)
 

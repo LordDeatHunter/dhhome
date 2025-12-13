@@ -284,9 +284,42 @@
   image-rendering: pixelated;
 }
 
+.project-page-container {
+  @apply w-full max-w-[960px] px-4 pb-16;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.back-button {
+  @apply flex items-center gap-2 self-start;
+}
+
+.project-page-content {
+  @apply relative flex flex-col items-center justify-start gap-6 rounded-2xl p-6;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
+  border: 2px solid var(--txt-crimson);
+  backdrop-filter: blur(10px);
+}
+
+.project-page-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
+  opacity: 1;
+  pointer-events: none;
+}
+
 .project-overview {
   @apply flex flex-col gap-3 p-4;
   color: var(--txt-crimson-lighter);
+  position: relative;
+  z-index: 2;
 }
 
 .project-overview h2 {
@@ -352,6 +385,20 @@
   min-height: 200px;
   background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
   border: 2px solid var(--txt-crimson);
+}
+
+.project-overview div > a > img[src*='shields.io'],
+.project-overview div > a > img[src*='cf.way2muchnoise.eu'],
+.project-overview div > a > img[src*='modrinth'] {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  min-height: 0;
+  width: auto;
+  height: auto;
 }
 
 .hobby-links-container {
