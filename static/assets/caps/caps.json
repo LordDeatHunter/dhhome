@@ -29,12 +29,6 @@
     "country": "Germany",
     "name": "1628"
   },
-  "281459": {
-    "id": "281459",
-    "internalId": "281459",
-    "country": "Greece",
-    "name": "A"
-  },
   "190913": {
     "id": "190913",
     "internalId": "190913",
@@ -2074,6 +2068,12 @@
     "internalId": "294159",
     "country": "Poland",
     "name": "Żubr"
+  },
+  "281459": {
+    "id": "281459",
+    "internalId": "281459",
+    "country": "Greece",
+    "name": "ΑΛΦΑ"
   },
   "182920": {
     "id": "182920",
