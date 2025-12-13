@@ -4,6 +4,7 @@
   import type { Bottlecap as BottlecapType, Bottlecaps } from '$lib/types';
   import Bottlecap from '$components/Bottlecap.svelte';
   import ImageModal from '$components/ImageModal.svelte';
+  import ScrollToTop from '$components/ScrollToTop.svelte';
   import { FeatureState, FillLayer, GeoJSONSource, LineLayer, MapLibre } from 'svelte-maplibre-gl';
   import { transliterate } from 'transliteration';
   import Fuse from 'fuse.js';
@@ -140,4 +141,5 @@
     </div>
   </div>
   <ImageModal />
+  <ScrollToTop />
 </main>

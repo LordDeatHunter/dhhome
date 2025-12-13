@@ -3,6 +3,7 @@
   import PageHeader from '$components/PageHeader.svelte';
   import ExternalLink from '$components/ExternalLink.svelte';
   import Technologies from '$components/Technologies.svelte';
+  import ScrollToTop from '$components/ScrollToTop.svelte';
   import Icon from '@iconify/svelte';
   import { mount, unmount } from 'svelte';
   import type { Project } from '$lib/types';
@@ -119,4 +120,5 @@
       {/if}
     </div>
   </div>
+  <ScrollToTop />
 </main>

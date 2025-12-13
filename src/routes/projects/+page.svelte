@@ -2,6 +2,7 @@
   import '$style/style.css';
   import PageHeader from '$components/PageHeader.svelte';
   import ProjectCategory from '$components/ProjectCategory.svelte';
+  import ScrollToTop from '$components/ScrollToTop.svelte';
   import type { ProjectCategory as ProjectCategoryType } from '$lib/types';
 
   interface Props {
@@ -18,4 +19,5 @@
       <ProjectCategory {projectCategory} />
     {/each}
   </div>
+  <ScrollToTop />
 </main>

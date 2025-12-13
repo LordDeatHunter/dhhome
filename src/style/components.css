@@ -231,3 +231,53 @@
   position: relative;
   z-index: 2;
 }
+
+.scroll-to-top {
+  @apply fixed right-8 bottom-8 z-50 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full transition-all duration-300 ease-in-out;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(16, 16, 16, 0.9) 100%);
+  border: 2px solid var(--txt-crimson);
+  color: var(--txt-crimson);
+  box-shadow: 0 4px 12px rgba(241, 50, 67, 0.3);
+  animation: fadeInButton 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.scroll-to-top.hide {
+  animation: fadeOutButton 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-to-top:hover {
+  @apply scale-110;
+  background: var(--txt-crimson-faded);
+  color: var(--txt-crimson-lighter);
+  border-color: var(--txt-crimson-lighter);
+  box-shadow: 0 6px 16px rgba(241, 50, 67, 0.5);
+}
+
+.scroll-to-top:active {
+  @apply scale-95;
+}
+
+@keyframes fadeInButton {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutButton {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
