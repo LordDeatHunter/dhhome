@@ -3,8 +3,31 @@
 }
 
 .button {
-  @apply rounded-lg bg-(--txt-gray-1) px-4 py-2 font-semibold uppercase shadow-lg transition-all duration-150 ease-in-out hover:bg-(--txt-crimson-faded);
+  @apply cursor-pointer rounded-lg px-4 py-2 font-semibold uppercase shadow-lg transition-all duration-200 ease-in-out;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(16, 16, 16, 0.6) 100%);
   color: var(--txt-crimson);
+  border: 2px solid var(--txt-crimson);
+  box-shadow: 0 2px 8px rgba(241, 50, 67, 0.15);
+}
+
+.button:hover {
+  @apply scale-105;
+  background: var(--txt-crimson-faded);
+  color: var(--txt-crimson-lighter);
+  border-color: var(--txt-crimson-lighter);
+  box-shadow: 0 4px 12px rgba(241, 50, 67, 0.4);
+}
+
+.button:active {
+  @apply scale-95;
+}
+
+.button.icon-only {
+  @apply p-2;
+}
+
+.button.icon-only:hover {
+  @apply scale-110;
 }
 
 .sort-button {
