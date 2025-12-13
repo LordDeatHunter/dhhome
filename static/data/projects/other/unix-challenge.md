@@ -1,7 +1,6 @@
 ---
 title: 'Unix Challenge'
 summary: 'A "competitive programming" style site for Unix commands.'
-link: 'https://unix-challenge.com/'
 source: 'https://github.com/LordDeatHunter/UnixChallenge'
 img: 'assets/unix-challenge.png'
 technologies: [ Python, SolidJS, Docker, Linux ]
