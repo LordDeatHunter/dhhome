@@ -79,6 +79,13 @@
             }}
             onmousemove={(ev) => (hoveredId = ev.features?.[0]?.id)}
             onmouseleave={() => (hoveredId = undefined)}
+            onclick={(ev) => {
+              const countryName = ev.features?.[0]?.properties?.name;
+              if (countryName) {
+                search = countryName;
+                sortBy = 'country';
+              }
+            }}
           />
           <LineLayer
             paint={{
