@@ -102,16 +102,9 @@
 }
 
 .project-dialog-content::before {
+  @apply pointer-events-none absolute inset-0 rounded-2xl opacity-100;
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 1rem;
   background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
-  opacity: 1;
-  pointer-events: none;
 }
 
 .project-dialog-close {
@@ -143,23 +136,17 @@
 }
 
 .project-dialog-content > h2 {
-  @apply text-3xl font-bold sm:text-4xl;
+  @apply relative z-2 text-3xl font-bold sm:text-4xl;
   color: var(--txt-crimson);
-  position: relative;
-  z-index: 2;
 }
 
 .project-dialog-content .project-overview {
-  position: relative;
-  z-index: 2;
+  @apply relative z-2;
 }
 
 .image-modal-dialog {
-  @apply m-auto max-h-[95vh] max-w-[95vw] p-0;
+  @apply m-auto max-h-[95vh] max-w-[95vw] rounded-2xl border-none p-0 outline-none;
   background: transparent;
-  border: none;
-  outline: none;
-  border-radius: 1rem;
   animation: slideUp 0.3s ease-out;
   box-shadow:
     0 0 40px rgba(241, 50, 67, 0.25),
@@ -183,16 +170,9 @@
 }
 
 .image-modal-content::before {
+  @apply pointer-events-none absolute inset-0 rounded-2xl opacity-100;
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 1rem;
   background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
-  opacity: 1;
-  pointer-events: none;
 }
 
 .image-modal-close {
@@ -214,22 +194,13 @@
 }
 
 .image-modal-img {
-  @apply rounded-lg;
-  max-height: 80vh;
-  max-width: 80vw;
-  object-fit: contain;
+  @apply relative z-2 max-h-[80vh] max-w-[80vw] rounded-lg object-contain;
   image-rendering: auto;
-  position: relative;
-  z-index: 2;
 }
 
 .image-loading-box {
-  @apply flex flex-col items-center justify-center p-12;
+  @apply absolute z-2 flex min-h-[200px] min-w-[200px] flex-col items-center justify-center p-12;
   color: var(--txt-crimson);
-  min-width: 200px;
-  min-height: 200px;
-  position: relative;
-  z-index: 2;
 }
 
 .scroll-to-top {

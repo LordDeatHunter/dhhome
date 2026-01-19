@@ -61,22 +61,14 @@
   }
 
   nav a {
-    @apply text-lg transition-all duration-300 ease-in-out sm:text-2xl;
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 4px;
+    @apply relative pb-1 text-lg no-underline transition-all duration-300 ease-in-out sm:text-2xl;
   }
 
   nav a::after {
+    @apply absolute inset-x-0 bottom-0 h-0.5 opacity-100;
+    @apply transition-all duration-300 ease-in-out;
     content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
     background-image: linear-gradient(90deg, transparent, currentColor, transparent);
-    transition: opacity 0.3s ease-in-out;
-    opacity: 1;
   }
 
   nav a[aria-current='page'] {
@@ -98,7 +90,7 @@
   nav a:hover::after,
   nav a:focus::after,
   nav a.force-hover::after {
-    opacity: 0;
+    @apply opacity-0;
   }
 
   #home nav a,

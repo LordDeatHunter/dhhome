@@ -110,20 +110,14 @@
 }
 
 .contact-link::before {
+  @apply pointer-events-none absolute inset-0 opacity-0;
+  @apply transition-all duration-300 ease-in-out;
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background: linear-gradient(90deg, transparent, rgba(241, 50, 67, 0.05), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none;
 }
 
 .contact-link:hover::before {
-  opacity: 1;
+  @apply opacity-100;
 }
 
 .contact-link:hover {
@@ -135,14 +129,13 @@
 }
 
 .contact-link .contact-icon {
-  @apply flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 ease-in-out sm:h-14 sm:w-14;
+  @apply flex h-12 w-12 items-center justify-center rounded-full text-black transition-all duration-300 ease-in-out sm:h-14 sm:w-14;
   background: linear-gradient(135deg, var(--txt-crimson) 0%, var(--txt-crimson-lighter) 100%);
   box-shadow: 0 4px 12px rgba(241, 50, 67, 0.3);
-  color: black;
 }
 
 .contact-link:hover .contact-icon {
-  transform: scale(1.1) rotate(5deg);
+  @apply scale-110 rotate-5;
   box-shadow: 0 6px 20px rgba(241, 50, 67, 0.5);
 }
 
@@ -184,10 +177,7 @@
 }
 
 .projects-container {
-  @apply w-full max-w-[1440px] px-4 pb-16;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  @apply flex w-full max-w-[1440px] flex-col gap-8 px-4 pb-16;
 }
 
 .project-container {
@@ -198,17 +188,10 @@
 }
 
 .project-container::before {
+  @apply pointer-events-none absolute inset-0 rounded-2xl opacity-0;
+  @apply transition-all duration-300 ease-in-out;
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 1rem;
   background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none;
 }
 
 .project-container:hover::before {
@@ -303,23 +286,14 @@
 }
 
 .project-page-content::before {
+  @apply pointer-events-none absolute inset-0 rounded-2xl opacity-100;
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 1rem;
   background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
-  opacity: 1;
-  pointer-events: none;
 }
 
 .project-overview {
-  @apply flex flex-col gap-3 p-4;
+  @apply relative z-2 flex flex-col gap-3 p-4;
   color: var(--txt-crimson-lighter);
-  position: relative;
-  z-index: 2;
 }
 
 .project-overview h2 {
@@ -379,10 +353,7 @@
 }
 
 .project-overview img {
-  @apply my-4 rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105;
-  max-width: 100%;
-  height: auto;
-  min-height: 200px;
+  @apply my-4 h-auto min-h-[200px] max-w-full rounded-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105;
   background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
   border: 2px solid var(--txt-crimson);
 }
@@ -390,15 +361,8 @@
 .project-overview div > a > img[src*='shields.io'],
 .project-overview div > a > img[src*='cf.way2muchnoise.eu'],
 .project-overview div > a > img[src*='modrinth'] {
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
+  @apply m-0 h-auto min-h-0 w-auto rounded-none border-none p-0 shadow-none;
   background: none;
-  min-height: 0;
-  width: auto;
-  height: auto;
 }
 
 .hobby-links-container {
@@ -431,17 +395,10 @@
 }
 
 .hobby-link::before {
+  @apply pointer-events-none absolute inset-0 rounded-2xl opacity-0;
+  @apply transition-all duration-300 ease-in-out;
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 1rem;
   background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none;
 }
 
 .hobby-link:hover::before {
@@ -487,10 +444,7 @@
 }
 
 .hobby-subpage-container {
-  @apply w-full max-w-[1440px] px-4 pb-16;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  @apply flex w-full max-w-[1440px] flex-col gap-8 px-4 pb-16;
 }
 
 .map-container {
@@ -546,13 +500,10 @@
 }
 
 .bottlecap .title {
-  @apply text-center text-3xl transition-colors duration-300 ease-in-out;
+  @apply max-w-full text-center text-3xl wrap-break-word hyphens-auto transition-colors duration-300 ease-in-out;
+  word-wrap: break-word;
   font-family: Handjet, sans-serif !important;
   color: var(--txt-crimson);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
 }
 
 .bottlecap:hover .title {
@@ -560,11 +511,9 @@
 }
 
 .bottlecap .country {
-  @apply text-center transition-colors duration-300 ease-in-out;
+  @apply max-w-full text-center wrap-break-word transition-colors duration-300 ease-in-out;
   color: var(--txt-crimson-light);
   word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
 }
 
 .bottlecap:hover .country {
@@ -572,9 +521,8 @@
 }
 
 .bottlecap img {
-  @apply transition-all duration-300 ease-in-out;
+  @apply rounded-full transition-all duration-300 ease-in-out;
   border: 3px solid var(--dark-3);
-  border-radius: 100%;
 }
 
 .bottlecap:hover img {
@@ -589,9 +537,8 @@
 }
 
 .maplibre-visited {
-  @apply aspect-4/5 h-auto w-[90%] min-w-[60vw] rounded-2xl shadow-2xl md:aspect-video;
+  @apply aspect-4/5 h-auto w-[90%] min-w-[60vw] overflow-hidden rounded-2xl shadow-2xl md:aspect-video;
   border: 2px solid var(--dark-3);
-  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
 
