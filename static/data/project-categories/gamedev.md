@@ -9,9 +9,7 @@ As a kid, my first exposure to programming was through experimenting with the so
 My GameDev journey "officially" began around 2018, with lower-level graphics frameworks such as Love2D in Lua, PyGame in
 Python and MonoGame in C#.
 
-I also started participating in GameJams since around 2020, and over the years I've experimented with various game
-engines and frameworks, with my latest focus being on Godot.
+I started participating in GameJams since 2019, and over the years I've experimented with various game engines and
+frameworks, with my latest focus being on Godot, in which I have accumulated over 1200 hours of experience.
 
-Most of the games I have available publicly were made during GameJams, and not much progress has been made on them since then.
-
-My most notable achievements as a team are 1st place, as well as the "Best Programmers" award in my country's local hosting of 2025 and 2023 Global Game Jam.
+My most notable achievements (as a team) are winning 1st place in our country's hosting of Global GameJam 2 years in a row (2025, 2026), as well as winning the "Best Programmer" award in 2023.
