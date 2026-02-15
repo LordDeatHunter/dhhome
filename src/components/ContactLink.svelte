@@ -4,17 +4,18 @@
   interface Props {
     text: string;
     mainIcon: string;
-    action: () => void;
+    action?: () => void;
+    url?: string;
     actionIcon: string;
     actionText: string;
     animationDelay?: string;
   }
 
-  let { text, mainIcon, action, actionIcon, actionText, animationDelay }: Props = $props();
+  let { text, mainIcon, action, url, actionIcon, actionText, animationDelay }: Props = $props();
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.code === 'Enter' || event.code === 'Space') {
-      action();
+      action?.();
     }
   };
 </script>
@@ -29,15 +30,28 @@
     </div>
     <h2 class="contact-text text-xl font-[960] sm:text-2xl">{text}</h2>
   </div>
-  <div
-    onclick={action}
-    onkeydown={handleKeyDown}
-    class="contact-action"
-    aria-label={actionText}
-    tabindex="0"
-    role="button"
-  >
-    <Icon icon={actionIcon} class="h-5 w-5" />
-    <span class="contact-action-text">{actionText}</span>
-  </div>
+  {#if url}
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact-action"
+      aria-label={actionText}
+    >
+      <Icon icon={actionIcon} class="h-5 w-5" />
+      <span class="contact-action-text">{actionText}</span>
+    </a>
+  {:else}
+    <div
+      onclick={action}
+      onkeydown={handleKeyDown}
+      class="contact-action"
+      aria-label={actionText}
+      tabindex="0"
+      role="button"
+    >
+      <Icon icon={actionIcon} class="h-5 w-5" />
+      <span class="contact-action-text">{actionText}</span>
+    </div>
+  {/if}
 </div>
