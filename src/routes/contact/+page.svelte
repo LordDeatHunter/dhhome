@@ -54,6 +54,15 @@
       <div class="divider-h-dark"></div>
       <ContactLink
         animationDelay="0.5s"
+        text="Modrinth"
+        mainIcon="simple-icons:modrinth"
+        action={() => window.open('https://modrinth.com/user/LordDeatHunter/')}
+        actionIcon="pixelarticons:external-link"
+        actionText="Open"
+      />
+      <div class="divider-h-dark"></div>
+      <ContactLink
+        animationDelay="0.6s"
         text="Itch.io"
         mainIcon="simple-icons:itchdotio"
         action={() => window.open('https://lorddeathunter.itch.io/')}
