@@ -1,3 +1,4 @@
+import argparse
 import requests
 import json
 import os
@@ -28,20 +29,37 @@ def get_cap_ids():
         yield cap_id
 
 
-def fetch_all_caps():
-    with open('caps_fetched.json', 'w', encoding='utf-8') as f:
-        caps = {}
-        for cap_id in get_cap_ids():
+def get_search_id(cap_id):
+    return cap_id.split('-')[0]
+
+
+def load_fetched_caps():
+    try:
+        with open('caps_fetched.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def fetch_all_caps(force=False):
+    cap_ids = list(get_cap_ids())
+    fetched_caps = {} if force else load_fetched_caps()
+    caps = {cap_id: fetched_caps[cap_id] for cap_id in cap_ids if cap_id in fetched_caps}
+    to_fetch = [cap_id for cap_id in cap_ids if cap_id not in caps]
+
+    if caps:
+        print(f'Skipping {len(caps)} already fetched caps')
+
+    try:
+        for cap_id in to_fetch:
             print(f'Fetching cap {cap_id}')
             try:
-                search_id = cap_id
-                if '-' in search_id:
-                    search_id = cap_id.split('-')[0]
-                cap = fetch_cap(search_id)
-                caps[cap_id] = cap
+                caps[cap_id] = fetch_cap(get_search_id(cap_id))
             except Exception as e:
                 print(f'Failed to fetch cap {cap_id}: {e}')
-        json.dump(caps, f, indent=2, ensure_ascii=False)
+    finally:
+        with open('caps_fetched.json', 'w', encoding='utf-8') as f:
+            json.dump(caps, f, indent=2, ensure_ascii=False)
 
 
 def get_name_from_info(info):
@@ -128,6 +146,10 @@ def rescale_images():
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--force', action='store_true', help='re-fetch caps that are already fetched')
+    args = parser.parse_args()
+
     print('Enter the function you want to run:')
     print('1. re-fetch cap data')
     print('2. clean data')
@@ -137,7 +159,7 @@ if __name__ == '__main__':
 
     match choice:
         case '1':
-            fetch_all_caps()
+            fetch_all_caps(force=args.force)
         case '2':
             clean_data()
         case '3':
