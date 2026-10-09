@@ -2,6 +2,7 @@ import argparse
 import requests
 import json
 import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from PIL import Image
 
 BASE_URL = 'https://crowncaps.info/data/catalog/caps/'
@@ -12,7 +13,7 @@ COUNTRY_NAME_OVERRIDES = {
 
 
 def fetch_cap(cap_id):
-    response = requests.get(f'{BASE_URL}{cap_id}')
+    response = requests.get(f'{BASE_URL}{cap_id}', timeout=30)
     response.raise_for_status()
     return response.json()
 
@@ -41,7 +42,7 @@ def load_fetched_caps():
         return {}
 
 
-def fetch_all_caps(force=False):
+def fetch_all_caps(force=False, threads=8):
     cap_ids = list(get_cap_ids())
     fetched_caps = {} if force else load_fetched_caps()
     caps = {cap_id: fetched_caps[cap_id] for cap_id in cap_ids if cap_id in fetched_caps}
@@ -50,14 +51,18 @@ def fetch_all_caps(force=False):
     if caps:
         print(f'Skipping {len(caps)} already fetched caps')
 
+    executor = ThreadPoolExecutor(max_workers=threads)
     try:
-        for cap_id in to_fetch:
-            print(f'Fetching cap {cap_id}')
+        futures = {executor.submit(fetch_cap, get_search_id(cap_id)): cap_id for cap_id in to_fetch}
+        for future in as_completed(futures):
+            cap_id = futures[future]
             try:
-                caps[cap_id] = fetch_cap(get_search_id(cap_id))
+                caps[cap_id] = future.result()
+                print(f'Fetched cap {cap_id}')
             except Exception as e:
                 print(f'Failed to fetch cap {cap_id}: {e}')
     finally:
+        executor.shutdown(cancel_futures=True)
         with open('caps_fetched.json', 'w', encoding='utf-8') as f:
             json.dump(caps, f, indent=2, ensure_ascii=False)
 
@@ -148,7 +153,10 @@ def rescale_images():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--force', action='store_true', help='re-fetch caps that are already fetched')
+    parser.add_argument('-t', '--threads', type=int, default=8, help='number of threads to fetch caps with (default: 8)')
     args = parser.parse_args()
+    if args.threads < 1:
+        parser.error('--threads must be at least 1')
 
     print('Enter the function you want to run:')
     print('1. re-fetch cap data')
@@ -159,7 +167,7 @@ if __name__ == '__main__':
 
     match choice:
         case '1':
-            fetch_all_caps(force=args.force)
+            fetch_all_caps(force=args.force, threads=args.threads)
         case '2':
             clean_data()
         case '3':
