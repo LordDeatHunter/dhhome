@@ -7,15 +7,26 @@ from PIL import Image
 
 BASE_URL = 'https://crowncaps.info/data/catalog/caps/'
 
+GREEN = '\033[32m'
+RED = '\033[31m'
+YELLOW = '\033[33m'
+RESET = '\033[0m'
+
 COUNTRY_NAME_OVERRIDES = {
     'Korea (South)': 'South Korea'
 }
 
 
 def fetch_cap(cap_id):
-    response = requests.get(f'{BASE_URL}{cap_id}', timeout=30)
-    response.raise_for_status()
-    return response.json()
+    return requests.get(f'{BASE_URL}{cap_id}', timeout=30)
+
+
+def status_color(status):
+    if 200 <= status < 300:
+        return GREEN
+    if 400 <= status < 600:
+        return RED
+    return YELLOW
 
 
 def get_cap_ids():
@@ -57,10 +68,13 @@ def fetch_all_caps(force=False, threads=8):
         for future in as_completed(futures):
             cap_id = futures[future]
             try:
-                caps[cap_id] = future.result()
-                print(f'Fetched cap {cap_id}')
+                response = future.result()
+                if 200 <= response.status_code < 300:
+                    caps[cap_id] = response.json()
             except Exception as e:
-                print(f'Failed to fetch cap {cap_id}: {e}')
+                print(f'{YELLOW}[ERR] {cap_id}: {e}{RESET}')
+                continue
+            print(f'{status_color(response.status_code)}[{response.status_code}] {cap_id}{RESET}')
     finally:
         executor.shutdown(cancel_futures=True)
         with open('caps_fetched.json', 'w', encoding='utf-8') as f:
