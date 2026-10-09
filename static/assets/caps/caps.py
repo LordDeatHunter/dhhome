@@ -4,6 +4,7 @@ import json
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from PIL import Image
+from tqdm import tqdm
 
 BASE_URL = 'https://crowncaps.info/data/catalog/caps/'
 
@@ -65,16 +66,18 @@ def fetch_all_caps(force=False, threads=8):
     executor = ThreadPoolExecutor(max_workers=threads)
     try:
         futures = {executor.submit(fetch_cap, get_search_id(cap_id)): cap_id for cap_id in to_fetch}
-        for future in as_completed(futures):
-            cap_id = futures[future]
-            try:
-                response = future.result()
-                if 200 <= response.status_code < 300:
-                    caps[cap_id] = response.json()
-            except Exception as e:
-                print(f'{YELLOW}[ERR] {cap_id}: {e}{RESET}')
-                continue
-            print(f'{status_color(response.status_code)}[{response.status_code}] {cap_id}{RESET}')
+        with tqdm(total=len(futures), unit='cap') as progress:
+            for future in as_completed(futures):
+                cap_id = futures[future]
+                progress.update()
+                try:
+                    response = future.result()
+                    if 200 <= response.status_code < 300:
+                        caps[cap_id] = response.json()
+                except Exception as e:
+                    tqdm.write(f'{YELLOW}[ERR] {cap_id}: {e}{RESET}')
+                    continue
+                tqdm.write(f'{status_color(response.status_code)}[{response.status_code}] {cap_id}{RESET}')
     finally:
         executor.shutdown(cancel_futures=True)
         with open('caps_fetched.json', 'w', encoding='utf-8') as f:
