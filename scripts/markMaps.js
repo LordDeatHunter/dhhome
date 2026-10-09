@@ -24,7 +24,8 @@ const VISITED_COUNTRIES = new Set([
   'Slovakia',
   'Hungary',
   'Switzerland',
-  'Austria'
+  'Austria',
+  'Vatican'
 ]);
 
 function markMap(map, markedCountries) {
