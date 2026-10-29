@@ -105,7 +105,7 @@
 }
 
 .contact-link {
-  @apply relative flex flex-col gap-3 p-6 transition-all duration-300 ease-in-out sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-8;
+  @apply relative flex cursor-pointer flex-col gap-3 p-6 transition-all duration-300 ease-in-out sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-8;
   background: transparent;
 }
 
@@ -150,26 +150,26 @@
 }
 
 .contact-link .contact-action {
-  @apply flex w-fit transform cursor-pointer items-center gap-2 rounded-lg px-4 py-2 transition-all duration-300 ease-in-out sm:ml-auto;
+  @apply flex w-fit transform items-center gap-2 rounded-lg px-4 py-2 transition-all duration-300 ease-in-out sm:ml-auto;
   color: var(--txt-crimson-light);
   border: 2px solid var(--txt-crimson);
   background: rgba(189, 14, 51, 0.1);
 }
 
-.contact-link .contact-action:hover {
+.contact-link:hover .contact-action {
   @apply scale-105;
   color: var(--txt-crimson-lighter);
   background: rgba(241, 50, 67, 0.2);
   box-shadow: 0 4px 12px rgba(241, 50, 67, 0.3);
 }
 
-.contact-link .contact-action:active {
+.contact-link:active .contact-action {
   @apply scale-95;
 }
 
-.contact-link .contact-action:focus-visible {
+.contact-link:focus-visible {
   outline: 2px solid var(--txt-crimson-lighter);
-  outline-offset: 2px;
+  outline-offset: -2px;
 }
 
 .contact-link .contact-action-text {
@@ -185,17 +185,6 @@
   background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(16, 16, 16, 0.95) 100%);
   border: 2px solid var(--dark-3);
   backdrop-filter: blur(10px);
-}
-
-.project-container::before {
-  @apply pointer-events-none absolute inset-0 rounded-2xl opacity-0;
-  @apply transition-all duration-300 ease-in-out;
-  content: '';
-  background: linear-gradient(135deg, transparent, rgba(241, 50, 67, 0.05), transparent);
-}
-
-.project-container:hover::before {
-  opacity: 1;
 }
 
 .project-container > h2 {

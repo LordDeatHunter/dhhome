@@ -20,9 +20,18 @@
   };
 </script>
 
-<div
+<svelte:element
+  this={url ? 'a' : 'div'}
   class="contact-link slide-up"
   style="animation-delay: {animationDelay ? animationDelay : '0s'};"
+  href={url}
+  target={url ? '_blank' : undefined}
+  rel={url ? 'noopener noreferrer' : undefined}
+  role={url ? undefined : 'button'}
+  tabindex={url ? undefined : 0}
+  aria-label={actionText}
+  onclick={url ? undefined : action}
+  onkeydown={url ? undefined : handleKeyDown}
 >
   <div class="contact-main">
     <div class="contact-icon">
@@ -30,28 +39,8 @@
     </div>
     <h2 class="contact-text text-xl font-[960] sm:text-2xl">{text}</h2>
   </div>
-  {#if url}
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="contact-action"
-      aria-label={actionText}
-    >
-      <Icon icon={actionIcon} class="h-5 w-5" />
-      <span class="contact-action-text">{actionText}</span>
-    </a>
-  {:else}
-    <div
-      onclick={action}
-      onkeydown={handleKeyDown}
-      class="contact-action"
-      aria-label={actionText}
-      tabindex="0"
-      role="button"
-    >
-      <Icon icon={actionIcon} class="h-5 w-5" />
-      <span class="contact-action-text">{actionText}</span>
-    </div>
-  {/if}
-</div>
+  <div class="contact-action">
+    <Icon icon={actionIcon} class="h-5 w-5" />
+    <span class="contact-action-text">{actionText}</span>
+  </div>
+</svelte:element>
