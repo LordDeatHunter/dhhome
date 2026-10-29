@@ -30,6 +30,24 @@
   @apply scale-110;
 }
 
+.project-card .button.icon-only {
+  @apply rounded-full shadow-none;
+  background: rgba(189, 14, 51, 0.15);
+  border: none;
+  box-shadow: none;
+}
+
+.project-card .button.icon-only:hover {
+  @apply scale-100;
+  color: var(--txt-crimson-lighter);
+  background: rgba(241, 50, 67, 0.3);
+  box-shadow: none;
+}
+
+.project-card .button.icon-only:active {
+  @apply scale-95;
+}
+
 .sort-button {
   @apply cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold uppercase shadow-lg transition-all duration-300 ease-in-out;
   border: 2px solid var(--txt-crimson);
@@ -68,8 +86,12 @@
 }
 
 .technologies-button {
-  @apply flex flex-wrap items-center justify-center gap-2;
+  @apply flex cursor-pointer flex-wrap items-center justify-center gap-2 transition-colors duration-300 ease-in-out;
   color: whitesmoke;
+}
+
+.technologies-button:hover {
+  color: var(--txt-crimson-lighter);
 }
 
 .project-dialog {

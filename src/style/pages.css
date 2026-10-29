@@ -240,14 +240,7 @@
 }
 
 .project-card:hover {
-  @apply scale-105;
   border-color: var(--txt-crimson);
-  background: linear-gradient(135deg, rgba(33, 33, 33, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
-  box-shadow: 0 4px 16px rgba(241, 50, 67, 0.3);
-}
-
-.project-card:hover img {
-  @apply scale-110;
 }
 
 .project-card .title {
