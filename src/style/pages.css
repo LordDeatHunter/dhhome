@@ -197,18 +197,33 @@
   color: var(--txt-crimson-light);
 }
 
-.project-container > button {
-  @apply cursor-pointer rounded-lg px-4 py-2 font-semibold transition-all duration-300 ease-in-out;
-  border: 2px solid var(--txt-crimson);
+.project-toggle {
+  @apply flex w-full cursor-pointer items-center justify-between py-3 text-lg font-semibold uppercase transition-colors duration-300 ease-in-out;
   color: var(--txt-crimson);
-  background: rgba(189, 14, 51, 0.1);
+  border-top: 1px solid var(--dark-3);
 }
 
-.project-container > button:hover {
-  @apply scale-105;
-  background: rgba(241, 50, 67, 0.2);
+.project-toggle:hover {
   color: var(--txt-crimson-lighter);
-  box-shadow: 0 4px 12px rgba(241, 50, 67, 0.3);
+}
+
+.project-toggle:focus-visible {
+  outline: 2px solid var(--txt-crimson-lighter);
+  outline-offset: 2px;
+}
+
+.project-toggle .project-toggle-icon {
+  @apply box-content rounded-full p-1 transition-all duration-300 ease-in-out;
+  background: rgba(189, 14, 51, 0.15);
+}
+
+.project-toggle:hover .project-toggle-icon {
+  background: rgba(241, 50, 67, 0.3);
+  box-shadow: 0 2px 10px rgba(241, 50, 67, 0.35);
+}
+
+.project-toggle .project-toggle-icon.open {
+  @apply rotate-180;
 }
 
 .project-cards {

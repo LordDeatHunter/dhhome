@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { blur } from 'svelte/transition';
+  import { slide } from 'svelte/transition';
   import ProjectCard from '$components/ProjectCard.svelte';
   import type { ProjectCategory } from '$lib/types';
   import Icon from '@iconify/svelte';
@@ -17,18 +17,17 @@
   {@html projectCategory.description}
   <button
     onclick={() => (showProjects = !showProjects)}
-    class="flex items-center justify-center gap-2 text-2xl"
+    aria-expanded={showProjects}
+    class="project-toggle"
   >
-    {showProjects
-      ? `Hide ${projectCategory.projects.length} Projects`
-      : `Show ${projectCategory.projects.length} Projects`}
+    <span>{projectCategory.projects.length} Projects</span>
     <Icon
-      icon={showProjects ? 'pixelarticons:chevron-up' : 'pixelarticons:chevron-down'}
-      class="h-8 w-8"
+      icon="pixelarticons:chevron-down"
+      class="project-toggle-icon h-6 w-6 {showProjects ? 'open' : ''}"
     />
   </button>
   {#if showProjects}
-    <div class="project-cards" out:blur={{ duration: 300 }} in:blur={{ duration: 300 }}>
+    <div class="project-cards" transition:slide={{ duration: 300 }}>
       {#each projectCategory.projects as project}
         <ProjectCard {project} />
       {/each}
