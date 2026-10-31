@@ -1,15 +1,22 @@
 <script lang="ts">
   import '$style/style.css';
   import NavBar from '$components/NavBar.svelte';
+  import HeroBackground from '$components/HeroBackground.svelte';
+  import KineticTitle from '$components/KineticTitle.svelte';
 
   export const openLink = (url: string, openInNewTab: boolean = true) => {
     window.open(url, openInNewTab ? '_blank' : '_self');
   };
 </script>
 
-<main id="home" class="bg-home flex flex-col items-center justify-center gap-0">
-  <div class="grow-in flex flex-col items-center justify-center gap-4">
-    <p class="fade-in text-5xl font-[960]">DeatHunter</p>
+<main
+  id="home"
+  class="bg-home relative flex flex-col items-center justify-center gap-0 overflow-hidden"
+  style="animation: none"
+>
+  <HeroBackground />
+  <div class="grow-in relative z-10 flex flex-col items-center justify-center gap-4">
+    <KineticTitle text="DeatHunter" />
     <p class="slower-fade-in text-center text-[2rem]">[Software Engineer]</p>
     <img src="dh.png" class="mb-6 mt-8 h-auto w-40" alt="DeatHunter Avatar" />
     <div class="flex flex-col items-center justify-center gap-3">
