@@ -474,6 +474,48 @@
   color: var(--txt-crimson-light);
 }
 
+.countries-grid {
+  @apply mt-4 grid gap-6 text-left;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.progress-track {
+  @apply h-2 w-full overflow-hidden rounded-full;
+  background: var(--dark-3);
+}
+
+.progress-fill {
+  @apply h-full rounded-full transition-all duration-500 ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    #e5383b 0%,
+    #f77f00 25%,
+    #fcd000 50%,
+    #9acd32 75%,
+    #2ecc71 100%
+  );
+  background-repeat: no-repeat;
+}
+
+.countries-continent {
+  @apply mb-2 text-base font-bold uppercase sm:text-lg;
+  border-bottom: 2px solid var(--dark-3);
+}
+
+.countries-continent + .progress-track {
+  @apply mb-3;
+}
+
+.country-link {
+  @apply cursor-pointer text-left text-sm transition-colors duration-200 ease-in-out sm:text-base;
+  color: var(--txt-crimson-light);
+}
+
+.country-link:hover {
+  color: var(--txt-crimson-lighter);
+  text-decoration: underline;
+}
+
 .bottlecaps-container {
   @apply flex w-full justify-center;
 }

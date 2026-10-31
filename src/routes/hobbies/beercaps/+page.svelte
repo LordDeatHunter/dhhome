@@ -8,6 +8,8 @@
   import { FeatureState, FillLayer, GeoJSONSource, LineLayer, MapLibre } from 'svelte-maplibre-gl';
   import { transliterate } from 'transliteration';
   import Fuse from 'fuse.js';
+  import Icon from '@iconify/svelte';
+  import { slide } from 'svelte/transition';
 
   interface Props {
     data: {
@@ -54,7 +56,91 @@
   });
 
   let hoveredId: string | number | undefined = $state();
+
+  // Cap country names that differ from the map's names (or are missing from it)
+  const countryAliases: Record<string, string> = {
+    'Bosnia and Herzegovina': 'Bosnia and Herz.',
+    'Czech Republic': 'Czechia',
+    'United States': 'United States of America',
+    'Dominican Republic': 'Dominican Rep.'
+  };
+  const extraContinents: Record<string, string> = { Singapore: 'Asia' };
+
+  const continentByCountry = new Map<string, string>(
+    (data.map as GeoJSON.FeatureCollection).features.map((f) => [
+      f.properties?.name,
+      f.properties?.continent
+    ])
+  );
+
+  // Antarctica and open-ocean features aren't countries
+  const ignoredContinents = new Set(['Antarctica', 'Seven seas (open ocean)']);
+
+  const continentTotals = new Map<string, number>();
+  for (const continent of continentByCountry.values()) {
+    if (ignoredContinents.has(continent)) continue;
+    continentTotals.set(continent, (continentTotals.get(continent) ?? 0) + 1);
+  }
+  for (const [name, continent] of Object.entries(extraContinents)) {
+    if (continentByCountry.has(name)) continue;
+    continentTotals.set(continent, (continentTotals.get(continent) ?? 0) + 1);
+  }
+
+  const countriesByContinent = (() => {
+    const grouped = new Map<string, Array<{ name: string; count: number }>>(
+      [...continentTotals.keys()].map((continent) => [continent, []])
+    );
+    const counts = new Map<string, number>();
+    for (const { country } of bottlecapList) {
+      if (country.startsWith('-')) continue;
+      counts.set(country, (counts.get(country) ?? 0) + 1);
+    }
+    for (const [name, count] of counts) {
+      const continent =
+        extraContinents[name] ?? continentByCountry.get(countryAliases[name] ?? name) ?? 'Other';
+      if (!grouped.has(continent)) grouped.set(continent, []);
+      grouped.get(continent)!.push({ name, count });
+    }
+    return [...grouped]
+      .map(([continent, countries]) => ({
+        continent,
+        total: continentTotals.get(continent) ?? countries.length,
+        countries: countries.sort((a, b) => a.name.localeCompare(b.name))
+      }))
+      .sort(
+        (a, b) =>
+          b.countries.length - a.countries.length ||
+          b.total - a.total ||
+          a.continent.localeCompare(b.continent)
+      );
+  })();
+
+  let showCountries = $state(false);
+
+  const worldCountryCount = countriesByContinent.reduce((sum, c) => sum + c.total, 0);
+  const totalCountries = countriesByContinent.reduce((sum, c) => sum + c.countries.length, 0);
+
+  const showCountry = (name: string) => {
+    search = name;
+    sortBy = 'country';
+  };
 </script>
+
+{#snippet progress(value: number, total: number)}
+  {@const pct = total ? (value / total) * 100 : 0}
+  <div
+    class="progress-track"
+    role="progressbar"
+    aria-valuemin={0}
+    aria-valuemax={total}
+    aria-valuenow={value}
+  >
+    <div
+      class="progress-fill"
+      style="width: {pct}%; background-size: {pct ? 10000 / pct : 100}% 100%;"
+    ></div>
+  </div>
+{/snippet}
 
 <main id="hobbies" class="bg-hobbies flex flex-col items-center gap-0 overflow-x-hidden">
   <PageHeader
@@ -131,12 +217,43 @@
         <a href="https://crowncaps.info/" target="_blank" class="info-link">CrownCaps</a> and might not
         be fully accurate.
       </h4>
-      <h3 class="text-center text-xl font-[960] sm:text-2xl">
-        Last updated: 9th of October, 2026
-      </h3>
+      <h3 class="text-center text-xl font-[960] sm:text-2xl">Last updated: 9th of October, 2026</h3>
       <h3 class="text-center text-xl font-[960] sm:text-2xl">
         Showing {sortedBottlecaps.length} / {Object.keys(data.caps).length} bottlecaps.
       </h3>
+      <button
+        onclick={() => (showCountries = !showCountries)}
+        aria-expanded={showCountries}
+        class="project-toggle"
+      >
+        <div class="flex flex-1 flex-col gap-2 pr-4 text-left">
+          <span>{totalCountries} / {worldCountryCount} Countries</span>
+          {@render progress(totalCountries, worldCountryCount)}
+        </div>
+        <Icon
+          icon="pixelarticons:chevron-down"
+          class="project-toggle-icon h-6 w-6 {showCountries ? 'open' : ''}"
+        />
+      </button>
+      {#if showCountries}
+        <div class="countries-grid" transition:slide={{ duration: 300 }}>
+          {#each countriesByContinent as { continent, total, countries }}
+            <div>
+              <h4 class="countries-continent">{continent} ({countries.length} / {total})</h4>
+              {@render progress(countries.length, total)}
+              <ul>
+                {#each countries as { name, count }}
+                  <li>
+                    <button class="country-link" onclick={() => showCountry(name)}>
+                      {name} <span class="opacity-60">· {count}</span>
+                    </button>
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          {/each}
+        </div>
+      {/if}
     </div>
 
     <div class="slide-up bottlecaps-container" style="animation-delay: 0.4s;">
