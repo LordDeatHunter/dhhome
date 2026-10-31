@@ -3,6 +3,8 @@
   import ExternalLink from '$components/ExternalLink.svelte';
   import Technologies from '$components/Technologies.svelte';
   import { goto } from '$app/navigation';
+  import { transitionProjectId } from '$lib/stores';
+  import { projectImgTransitionName } from '$lib';
 
   interface Props {
     project: Project;
@@ -14,6 +16,7 @@
     if ((e.target as HTMLElement).closest('a')) {
       return;
     }
+    transitionProjectId.set(project.id);
     goto(`/projects/${project.id}`);
   };
 </script>
@@ -23,7 +26,14 @@
   <div class="flex flex-col justify-between gap-2">
     <div class="flex flex-col items-center justify-center gap-2">
       <div class="mt-2 flex h-32 w-32 items-center justify-center">
-        <img src={project.img} alt={project.title} class="project-img-preview" />
+        <img
+          src={project.img}
+          alt={project.title}
+          class="project-img-preview"
+          style:view-transition-name={$transitionProjectId === project.id
+            ? projectImgTransitionName(project.id)
+            : null}
+        />
       </div>
       <h2 class="title">{project.title}</h2>
       <Technologies technologies={project.technologies} />

@@ -5,6 +5,7 @@
   import Technologies from '$components/Technologies.svelte';
   import ScrollToTop from '$components/ScrollToTop.svelte';
   import Icon from '@iconify/svelte';
+  import { projectImgTransitionName } from '$lib';
   import { mount, unmount } from 'svelte';
   import type { Project } from '$lib/types';
 
@@ -95,7 +96,12 @@
         class="flex h-40 w-40 items-center justify-center"
         style="position: relative; z-index: 2;"
       >
-        <img src={`/${data.project.img}`} alt={data.project.title} class="project-img-preview" />
+        <img
+          src={`/${data.project.img}`}
+          alt={data.project.title}
+          class="project-img-preview"
+          style:view-transition-name={projectImgTransitionName(data.project.id)}
+        />
       </div>
 
       <div style="position: relative; z-index: 2;">

@@ -3,3 +3,4 @@ import type { Project } from '$lib/types';
 
 export const selectedProject = writable<Project | null>(null);
 export const selectedImage = writable<string | null>(null);
+export const transitionProjectId = writable<string | null>(null);

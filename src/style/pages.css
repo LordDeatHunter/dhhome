@@ -73,23 +73,23 @@
 }
 
 .bg-projects {
-  background-image: radial-gradient(circle at 25% 35%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 50% 25%, rgba(189, 14, 51, 0.02) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 25% 35%, var(--glow-stops)),
+    radial-gradient(circle at 75% 75%, var(--glow-stops)),
+    radial-gradient(circle at 50% 25%, var(--glow-stops-deep));
   background-color: var(--dark-1);
 }
 
 .bg-contact {
-  background-image: radial-gradient(circle at 20% 50%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(189, 14, 51, 0.02) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 20% 50%, var(--glow-stops)),
+    radial-gradient(circle at 80% 80%, var(--glow-stops)),
+    radial-gradient(circle at 40% 20%, var(--glow-stops-deep));
   background-color: var(--dark-1);
 }
 
 .bg-hobbies {
-  background-image: radial-gradient(circle at 30% 40%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(241, 50, 67, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 50% 30%, rgba(189, 14, 51, 0.02) 0%, transparent 50%);
+  background-image: radial-gradient(circle at 30% 40%, var(--glow-stops)),
+    radial-gradient(circle at 70% 70%, var(--glow-stops)),
+    radial-gradient(circle at 50% 30%, var(--glow-stops-deep));
   background-color: var(--dark-1);
 }
 

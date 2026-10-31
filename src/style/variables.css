@@ -9,4 +9,11 @@
   --txt-gray-2: #444444;
   --txt-gray-1: #333333;
   --txt-black: #0c0c1f;
+  /* eased falloff so the page glows have no visible disc edge (banding on near-black) */
+  --glow-stops: rgba(241, 50, 67, 0.03) 0%, rgba(241, 50, 67, 0.024) 12%,
+    rgba(241, 50, 67, 0.015) 26%, rgba(241, 50, 67, 0.007) 40%, rgba(241, 50, 67, 0.002) 52%,
+    rgba(241, 50, 67, 0) 65%;
+  --glow-stops-deep: rgba(189, 14, 51, 0.02) 0%, rgba(189, 14, 51, 0.016) 12%,
+    rgba(189, 14, 51, 0.01) 26%, rgba(189, 14, 51, 0.005) 40%, rgba(189, 14, 51, 0.001) 52%,
+    rgba(189, 14, 51, 0) 65%;
 }
