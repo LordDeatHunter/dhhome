@@ -10,6 +10,6 @@ My GameDev journey "officially" began around 2018, with lower-level graphics fra
 Python and MonoGame in C#.
 
 I started participating in GameJams since 2019, and over the years I've experimented with various game engines and
-frameworks, with my latest focus being on Godot, in which I have accumulated over 1200 hours of experience.
+frameworks, with my latest focus being on Godot, in which I have accumulated 2000+ hours of experience (as logged on Steam).
 
 My most notable achievements (as a team) are winning 1st place in our country's hosting of Global GameJam 2 years in a row (2025, 2026), as well as winning the "Best Programmer" award in 2023.
