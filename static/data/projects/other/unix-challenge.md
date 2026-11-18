@@ -2,6 +2,7 @@
 title: 'Unix Challenge'
 summary: 'A "competitive programming" style site for Unix commands.'
 source: 'https://github.com/LordDeatHunter/UnixChallenge'
+link: 'https://unixchallenge.deathunter.com/'
 img: 'assets/unix-challenge.png'
 technologies: [ Python, SolidJS, Docker, Linux ]
 ---
@@ -14,4 +15,4 @@ The site contains a terminal-style input where users can type in their commands,
 
 The backend is built using Python and FastAPI, while the frontend is built using SolidJS.
 
-At the moment, the site is still in its early stages, so there's no public deployment. However, the source code is available on GitHub for anyone interested in exploring or contributing to the project.
+The site is publicly hosted at [unixchallenge.deathunter.com](https://unixchallenge.deathunter.com/), and the source code is available on GitHub for anyone interested in exploring or contributing to the project.
