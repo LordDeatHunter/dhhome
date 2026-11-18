@@ -10,8 +10,8 @@ source: 'https://github.com/LordDeatHunter/nodeflow'
 Frontend library for creating flowcharts, graphs, diagrams and similar.
 
 This is a project I've been working on-and-off for a couple of years.\
-Currently, I am leveraging a lot of features from [SolidJS](https://www.solidjs.com/), but I am planning to make it more
-framework-agnostic in the near future.\
+It was originally built around [SolidJS](https://www.solidjs.com/), and I have since vibe-coded support for most modern
+mainstream frontend frameworks, so it is no longer tied to a single one.\
 The library is still in its early stages, but it is already usable for simple diagrams and flowcharts. I also have a
 couple of example projects that showcase the library's capabilities.
 
